@@ -1,0 +1,9 @@
+com._20dot.weixin
+com._20dot.weixin.config
+com._20dot.weixin.jssdk
+com._20dot.weixin.message
+com._20dot.weixin.message.batchmsg
+com._20dot.weixin.mp
+com._20dot.weixin.oauth2
+com._20dot.weixin.util
+com._20dot.weixin.util.http

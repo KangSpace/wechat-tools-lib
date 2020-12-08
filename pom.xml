@@ -6,7 +6,7 @@
     <groupId>org.kangspace.wechat</groupId>
     <artifactId>wechat-tools-lib</artifactId>
     <packaging>jar</packaging>
-    <version>1.0.1-SNAPSHOT</version>
+    <version>1.0.1</version>
     <url>https://github.com/KangSpace/wechat-tools-lib</url>
     <description>💬微信公众号接口集成；微信网页开发；微信网页授权；微信公众号模版消息；💬This is a tools lib for WeChat, use for mp.weixin.qq.com.</description>
 

@@ -7,6 +7,7 @@
     <artifactId>wechat-tools-lib</artifactId>
     <packaging>jar</packaging>
     <version>1.0.1</version>
+    <name>${artifactId}</name>
     <url>https://github.com/KangSpace/wechat-tools-lib</url>
     <description>💬微信公众号接口集成；微信网页开发；微信网页授权；微信公众号模版消息；💬This is a tools lib for WeChat, use for mp.weixin.qq.com.</description>
 
@@ -114,7 +115,7 @@
 
 
     <properties>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.encoding>UTF-8</project.encoding>
         <java.version>1.7</java.version>
         <spring-data-redis.version>1.8.0.RELEASE</spring-data-redis.version>
         <jedis.version>2.9.0</jedis.version>
@@ -197,6 +198,7 @@
             <groupId>redis.clients</groupId>
             <artifactId>jedis</artifactId>
             <version>${jedis.version}</version>
+            <scope>provided</scope>
         </dependency>
         <!-- provided libs end-->
     </dependencies>
@@ -208,9 +210,9 @@
                 <artifactId>maven-compiler-plugin</artifactId>
                 <version>3.1</version>
                 <configuration>
-                    <source>7</source>
-                    <target>7</target>
-                    <encoding>UTF-8</encoding>
+                    <source>${java.version}</source>
+                    <target>${java.version}</target>
+                    <encoding>${project.encoding}</encoding>
                 </configuration>
             </plugin>
 

@@ -1,5 +1,7 @@
 # wechat-tools-lib
 [![license](https://img.shields.io/github/license/KangSpace/wechat-tools-lib)](https://www.gnu.org/licenses/gpl-3.0.en.html)
+[![maven](https://img.shields.io/maven-central/v/org.kangspace.wechat/wechat-tools-lib)]()
+
 ### 介绍(Introduction)
 该项目集成封装微信公众号相关接口,并提供工具类访问接口。
 
@@ -106,7 +108,7 @@
                 <a href="doc/javadoc/org/kangspace/wechat/mp/MpInterfaceAccess.html"><code>MpInterfaceAccess</code></a>
             </td>
             <td><small></small><code>getMpUserListBatch(String appId, String accessToken, String nextOpenId, Consumer<List<MpUserBasicInfoReturnBean>> consumer, Function<String,String> retrieveTokenFn)</code></td>
-            <td><small><pre><code>new MpInterfaceAccess().interfaceAccess.getMpUserListBatch(appId, accessToken, nextOpenId,
+            <td><small><pre>new MpInterfaceAccess().interfaceAccess.getMpUserListBatch(appId, accessToken, nextOpenId,
                                                                      new Consumer<List<MpUserBasicInfoReturnBean>>() {
                                                                          @Override
                                                                          public void accept(List<MpUserBasicInfoReturnBean> mpUserInfos) {
@@ -121,7 +123,7 @@
                                                                          public String apply(String t) {
                                                                              return getAccessToken(t, true);
                                                                          }
-                                                                     })</code></pre></small></td>
+                                                                     })</pre></small></td>
         </tr>
         <tr>
             <td rowspan=3>发送模版消息</td>
@@ -137,7 +139,7 @@
                 <a href="doc/javadoc/org/kangspace/wechat/message/batch/SendHelper.html"><code>SendHelper</code></a>
             </td>
             <td><small>ForkJoinTask<Boolean> </small><code>send(String appId, SendObject obj, Function<String,String> reGetToken)</code></td>
-            <td><small><code>SendHelper.send(appId,message,(t)-> wxAccessTokenCache.refreshByAppId(appId))</code></small></td>
+            <td><small><code>SendHelper.send(appId,message,(t)->wxAccessTokenCache.refreshByAppId(appId))</code></small></td>
         </tr>
         <tr>
             <td><small>org.kangspace.wechat.message.factory</small><br>

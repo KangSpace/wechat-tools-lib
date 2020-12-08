@@ -12,21 +12,21 @@ public interface WeChatCacheOperator<T,V>{
     /**
      * 获取数据值并缓存信息
      * @param key
-     * @return
+     * @return V
      */
     V get(String appId, String key);
 
     /**
      * 获取缓存信息
      * @param key
-     * @return
+     * @return V
      */
     T getCache(String appId, String key);
 
     /**
      * 获取原始数据
      * @param appId
-     * @return
+     * @return T
      */
     T getRaw(String appId);
 
@@ -35,7 +35,7 @@ public interface WeChatCacheOperator<T,V>{
      * @param key
      * @param value
      * @param expiresSeconds 有效时间,单位s
-     * @return
+     * @return T
      */
     T saveCache(String appId, String key, T value, Long expiresSeconds);
 

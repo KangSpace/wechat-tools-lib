@@ -10,7 +10,7 @@ import java.util.Date;
  * 抽象微信缓存处理类
  * </pre>
  *
- * @author kangxuefeng@etiantian.com
+ * @author kango2gler@gmail.com
  * @date 2020/12/7 13:52
  */
 public abstract class AbstractWeChatCacheOperator<T extends AbstractWeChatCacheOperator.ExpireValue<V>, V> implements WeChatCacheOperator<T,V> {

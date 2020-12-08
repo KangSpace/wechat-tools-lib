@@ -1,0 +1,2 @@
+-- 参数: encoding utf-8 -docencoding utf-8
+javadoc.exe -private -splitindex -author -version -encoding utf-8 -docencoding utf-8 -d doc\javadoc

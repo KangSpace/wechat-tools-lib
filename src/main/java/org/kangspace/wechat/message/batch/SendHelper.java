@@ -1,7 +1,7 @@
 /**
  * File: PushHelper
  * DATE: 2016/12/21
- * Created by kangxuefeng
+ * Created by kango2gler@gmail.com
  */
 package org.kangspace.wechat.message.batch;
 
@@ -110,7 +110,6 @@ public class SendHelper {
      *
      * @Author kango2gler@gmail.com
      * @Date 2017/2/21 17:01
-     * @return
      */
     public static class SendObject {
         private String accessToken;

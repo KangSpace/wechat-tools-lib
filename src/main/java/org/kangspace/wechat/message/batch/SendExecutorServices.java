@@ -1,7 +1,7 @@
 /**
  * File: SendExecutorServices
  * DATE: 2016/12/21
- * Created by kangxuefeng
+ * Created by kango2gler@gmail.com
  */
 package org.kangspace.wechat.message.batch;
 

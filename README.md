@@ -123,7 +123,8 @@
                                                                          public String apply(String t) {
                                                                              return getAccessToken(t, true);
                                                                          }
-                                                                     })</pre></small></td>
+                                                                     })
+        </pre></small></td>                                                            
         </tr>
         <tr>
             <td rowspan=3>发送模版消息</td>

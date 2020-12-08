@@ -226,8 +226,8 @@ public class WebUtil {
     /**
      * 获取服务器路径
      * @param
-     * @Author kango2gler@gmail.com
-     * @Date 2017/1/5 16:43
+     * @author kango2gler@gmail.com
+     * @date 2017/1/5 16:43
      * @return
      */
     public static String getBasePath(HttpServletRequest request){
@@ -237,8 +237,8 @@ public class WebUtil {
     /**
      * 获取项目路径
      * @param
-     * @Author kango2gler@gmail.com
-     * @Date 2017/1/5 16:43
+     * @author kango2gler@gmail.com
+     * @date 2017/1/5 16:43
      * @return
      */
     public static String getProjectPath(HttpServletRequest request){
@@ -253,8 +253,8 @@ public class WebUtil {
      * @param path
      * @param maxAge
      * @param isHttpOnly
-     * @Author kango2gler@gmail.com
-     * @Date 2017/1/7 19:54
+     * @author kango2gler@gmail.com
+     * @date 2017/1/7 19:54
      * @return
      */
     public static void setCookie(HttpServletResponse response, String name, String value, String domain, String path, int maxAge, boolean isHttpOnly){

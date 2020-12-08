@@ -30,8 +30,8 @@ public class ConfigHelper {
 
     /**
      * 获取配置信息
-     * @Author kango2gler@gmail.com
-     * @Date 2017/5/4 11:17
+     * @author kango2gler@gmail.com
+     * @date 2017/5/4 11:17
      * @return
      */
     public ResourceBundle getBundle() {
@@ -40,8 +40,8 @@ public class ConfigHelper {
 
     /**
      * 初始化
-     * @Author kango2gler@gmail.com
-     * @Date 2017/2/13 15:27
+     * @author kango2gler@gmail.com
+     * @date 2017/2/13 15:27
      * @return
      */
     private void init() {
@@ -58,8 +58,8 @@ public class ConfigHelper {
      * 支持文件热加载
      * </pre>
      * @param key
-     * @Author kango2gler@gmail.com
-     * @Date 2017/2/10 17:34
+     * @author kango2gler@gmail.com
+     * @date 2017/2/10 17:34
      * @return value
      */
     public String getValue(String key){
@@ -77,8 +77,8 @@ public class ConfigHelper {
 
     /**
      * 通过key获取配置文件信息,若key不存在则不抛出异常
-     * @Author kango2gler@gmail.com
-     * @Date 2017/5/4 11:08
+     * @author kango2gler@gmail.com
+     * @date 2017/5/4 11:08
      * @return
      */
     public String getValueNoException(String key){

@@ -108,8 +108,8 @@ public class SendHelper {
     /**
      * 消息发送对象实体
      *
-     * @Author kango2gler@gmail.com
-     * @Date 2017/2/21 17:01
+     * @author kango2gler@gmail.com
+     * @date 2017/2/21 17:01
      */
     public static class SendObject {
         private String accessToken;

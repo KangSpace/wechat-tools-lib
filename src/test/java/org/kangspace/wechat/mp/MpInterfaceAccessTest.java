@@ -28,8 +28,8 @@ public class MpInterfaceAccessTest {
 
     /**
      * 获取accessToken
-     * @Author kango2gler@gmail.com
-     * @Date 2017/2/14 15:36
+     * @author kango2gler@gmail.com
+     * @date 2017/2/14 15:36
      */
     @Test
     public void getMpAccessToken(){
@@ -38,8 +38,8 @@ public class MpInterfaceAccessTest {
     }
     /**
      * 获取JSApiTicket
-     * @Author kango2gler@gmail.com
-     * @Date 2017/2/14 15:35
+     * @author kango2gler@gmail.com
+     * @date 2017/2/14 15:35
      */
     @Test
     public void getMpJSApiTicket(){

@@ -47,8 +47,8 @@ public class SendExecutorServices {
 
     /**
      * 获取 ExecutorService 对象
-     * @Author kango2gler@gmail.com
-     * @Date 2016/12/21 18:33
+     * @author kango2gler@gmail.com
+     * @date 2016/12/21 18:33
      * @return
      */
     public static ExecutorService getSendExecutorServices(){
@@ -57,8 +57,8 @@ public class SendExecutorServices {
     /**
      * 获取 ExecutorService 对象
      * @param nThreads the number of threads in the pool
-     * @Author kango2gler@gmail.com
-     * @Date 2016/12/21 18:33
+     * @author kango2gler@gmail.com
+     * @date 2016/12/21 18:33
      * @return
      */
     public static ExecutorService getSendExecutorServices(int nThreads){
@@ -78,8 +78,8 @@ public class SendExecutorServices {
      * 关闭线程池
      * @param isForce 是否立即关闭,是:则丢弃队列中的线程,发送interrupt()给正在执行的线程
      *                           否:则停止接收新线程入队,等待正在执行的线程完成
-     * @Author kango2gler@gmail.com
-     * @Date 2016/12/21 18:17
+     * @author kango2gler@gmail.com
+     * @date 2016/12/21 18:17
      *
      */
     public static void shutdown(Boolean isForce){
@@ -94,8 +94,8 @@ public class SendExecutorServices {
 
     /**
      * executorService 是否已实例化
-     * @Author kango2gler@gmail.com
-     * @Date 2016/12/22 15:34
+     * @author kango2gler@gmail.com
+     * @date 2016/12/22 15:34
      */
     public static void isExecutorServiceNotNull(){
         if (executorService == null) {

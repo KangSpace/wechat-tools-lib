@@ -16,8 +16,8 @@ public class WeChatUtil {
     /**
      * 将json字符串转换为 WeChatReturnBean
      * @param jsonStr
-     * @Author kango2gler@gmail.com
-     * @Date 2017/2/14 9:34
+     * @author kango2gler@gmail.com
+     * @date 2017/2/14 9:34
      * @return
      */
     public static <T> T asReturnBean(String jsonStr, Class<T> cls) {

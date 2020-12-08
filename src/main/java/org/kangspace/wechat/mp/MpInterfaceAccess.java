@@ -32,8 +32,8 @@ public class MpInterfaceAccess extends WeChatCapableRetrieveToken {
     /**
      * 获取公众号AccessToken
      * 该参数需缓存
-     * @Author kango2gler@gmail.com
-     * @Date 2017/2/14 10:07
+     * @author kango2gler@gmail.com
+     * @date 2017/2/14 10:07
      * @return
      * @see #getAccessToken(String)
      */
@@ -43,8 +43,8 @@ public class MpInterfaceAccess extends WeChatCapableRetrieveToken {
     /**
      * 获取公众号AccessToken
      * 该参数需缓存
-     * @Author kango2gler@gmail.com
-     * @Date 2017/2/14 10:07
+     * @author kango2gler@gmail.com
+     * @date 2017/2/14 10:07
      * @return
      * @see #getAccessToken()
      */
@@ -198,8 +198,8 @@ public class MpInterfaceAccess extends WeChatCapableRetrieveToken {
          有效时间2小时,所以需缓存2小时
      </pre>
      * @param
-     * @Author kango2gler@gmail.com
-     * @Date 2017/1/8 23:31
+     * @author kango2gler@gmail.com
+     * @date 2017/1/8 23:31
      * @return
      */
     public JSApiTicketReturnBean getJsApiTicket(String accessToken){
@@ -228,8 +228,8 @@ public class MpInterfaceAccess extends WeChatCapableRetrieveToken {
          其中的Url需encodeURIComponent
      </pre>
      * @param
-     * @Author kango2gler@gmail.com
-     * @Date 2017/1/8 23:48
+     * @author kango2gler@gmail.com
+     * @date 2017/1/8 23:48
      * @return
      */
     public static JSApiTicketSignBean getJsApiSign(JSApiTicketSignBean signBean) throws Exception {

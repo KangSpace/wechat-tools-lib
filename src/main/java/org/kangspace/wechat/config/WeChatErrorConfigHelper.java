@@ -29,8 +29,8 @@ public class WeChatErrorConfigHelper {
 
     /**
      * 初始化
-     * @Author kango2gler@gmail.com
-     * @Date 2017/2/13 15:27
+     * @author kango2gler@gmail.com
+     * @date 2017/2/13 15:27
      * @return
      */
     private static void init() {
@@ -49,8 +49,8 @@ public class WeChatErrorConfigHelper {
     /**
      * 获取配置值,若配置不存在不抛出异常
      * @param key
-     * @Author kango2gler@gmail.com
-     * @Date 2017/5/4 10:45
+     * @author kango2gler@gmail.com
+     * @date 2017/5/4 10:45
      * @return
      */
     public static String getValueWithoutException(String key) {

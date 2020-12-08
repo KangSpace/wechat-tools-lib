@@ -66,7 +66,7 @@ public abstract class _AbstractRedisWeChatCacheOperator<T extends AbstractWeChat
      * 根据Key获取缓存信息
      *
      * @param key 不含cacheKeyPrefix的key
-     * @return
+     * @return T
      */
     @Override
     public T getCache(String appId, String key) {
@@ -79,7 +79,7 @@ public abstract class _AbstractRedisWeChatCacheOperator<T extends AbstractWeChat
     /**
      * 获取默认缓存具体值
      *
-     * @return
+     * @return V
      */
     public V getValByDefaultKey() {
         return get(WeChatConfig.getDefaultAppIdSecret().getAppId(),ACCESS_TOKEN_CACHE_KEY);
@@ -96,7 +96,7 @@ public abstract class _AbstractRedisWeChatCacheOperator<T extends AbstractWeChat
     /**
      * 获取缓存信息,缓存不存在时,获取新内容
      *
-     * @return
+     * @return V
      */
     @Override
     public V get(String appId,String key) {
@@ -107,7 +107,7 @@ public abstract class _AbstractRedisWeChatCacheOperator<T extends AbstractWeChat
      * 获取缓存信息
      * @param key 不含cachePrefixKey
      * @param isRefresh 是否刷新缓存
-     * @return
+     * @return T
      */
     public T get(String appId,String key,Boolean isRefresh) {
         key = getFullKey(key);
@@ -185,7 +185,7 @@ public abstract class _AbstractRedisWeChatCacheOperator<T extends AbstractWeChat
      * 获取缓存的完整key
      * 格式: {cacheKeyPrefix}:{key}
      * @param key
-     * @return
+     * @return String
      */
     public String getFullKey(String key) {
         Objects.requireNonNull(key, "key must be not null");
@@ -195,7 +195,7 @@ public abstract class _AbstractRedisWeChatCacheOperator<T extends AbstractWeChat
     /**
      * 更具appId获取原始信息
      *
-     * @return
+     * @return T
      */
     @Override
     public abstract T getRaw(String appId);
@@ -207,14 +207,14 @@ public abstract class _AbstractRedisWeChatCacheOperator<T extends AbstractWeChat
 
     /**
      * 通过默认key刷新缓存
-     * @return
+     * @return V
      */
     public V refreshByDefaultKey() {
         return refreshByAppId(WeChatConfig.getDefaultAppIdSecret().getAppId());
     }
     /**
      * 通过默认key刷新缓存
-     * @return
+     * @return V
      */
     public V refreshByAppId(String appId) {
         return refreshCache(appId,MP_TOKENS_CACHE_KEY+appId).getValue();

@@ -7,6 +7,41 @@
     <artifactId>wechat-tools-lib</artifactId>
     <packaging>jar</packaging>
     <version>1.0.1-SNAPSHOT</version>
+    <url>https://github.com/KangSpace/wechat-tools-lib</url>
+
+    <licenses>
+        <license>
+            <name>GNU GENERAL PUBLIC LICENSE Version 3(GPL-3.0)</name>
+            <url>https://www.gnu.org/licenses/gpl-3.0.en.html</url>
+        </license>
+    </licenses>
+
+    <developers>
+        <developer>
+            <name>KangSpace</name>
+            <email>kango2gler@gmail.com</email>
+        </developer>
+    </developers>
+
+    <scm>
+        <connection>scm:git:https://github.com/KangSpace/wechat-tools-lib.git</connection>
+        <developerConnection>scm:git:https://github.com/KangSpace/wechat-tools-lib.git</developerConnection>
+        <url>${url}</url>
+    </scm>
+
+    <distributionManagement>
+        <snapshotRepository>
+            <id>oss.sonatype.org</id>
+            <name>oss.sonatype.org</name>
+            <url>https://oss.sonatype.org/content/repositories/snapshots/</url>
+        </snapshotRepository>
+        <repository>
+            <id>oss.sonatype.org</id>
+            <name>oss.sonatype.org</name>
+            <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
+        </repository>
+    </distributionManagement>
+
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <java.version>1.7</java.version>

@@ -154,9 +154,9 @@
 
 ### 快速开始：
 1. 项目环境:
-   <p><code>Maven,JDK1.7+,UTF-8</code></p>
-   <code>需在项目classes下配置wechat-config.properties,参考</code>[resources/wechat-config-example.properties](src/main/resources/wechat-config-example.properties)
-   
+   - <p><code>Maven,JDK1.7+,UTF-8</code></p>
+   - <code>需在项目classes下配置wechat-config.properties,参考</code>[resources/wechat-config-example.properties](src/main/resources/wechat-config-example.properties)
+      
 2. 使用"API列表"测试接口调用
 
 3. JavaDoc接口文档

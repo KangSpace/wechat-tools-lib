@@ -29,8 +29,8 @@ public class OAuth2InterfaceAccess {
      * @param param 网页授权state参数设置
      * @param request
      * @param response
-     * @Author kango2gler@gmail.com
-     * @Date 2017/2/15 17:24
+     * @author kango2gler@gmail.com
+     * @date 2017/2/15 17:24
      * @return
      */
     public void redirectToAuthorizeUrl(String redirectURI, String param, HttpServletRequest request, HttpServletResponse response) throws UnsupportedEncodingException {
@@ -59,8 +59,8 @@ public class OAuth2InterfaceAccess {
      * @param request
      * @param response
      * @return
-     * @Author kango2gler@gmail.com
-     * @Date 2017/2/15 17:24
+     * @author kango2gler@gmail.com
+     * @date 2017/2/15 17:24
      */
     public void redirectToAuthorizeUrl(String appId,String redirectURI, String param, WeChatConfig.OAth2Scope scope, HttpServletRequest request, HttpServletResponse response) throws UnsupportedEncodingException {
         String url = WeChatConfig.getOauth2AuthorizeUrl(appId,redirectURI, scope, (param != null ? URLEncoder.encode(param, "UTF-8") : ""));
@@ -70,8 +70,8 @@ public class OAuth2InterfaceAccess {
     /**
      * 获取网页授权AccessToken
      * @param code 网页授权返回的code
-     * @Author kango2gler@gmail.com
-     * @Date 2017/2/15 17:36
+     * @author kango2gler@gmail.com
+     * @date 2017/2/15 17:36
      * @return
      */
     public OAuth2AccessTokenReturnBean getAccessToken(String code){
@@ -113,8 +113,8 @@ public class OAuth2InterfaceAccess {
      * @param accessToken
      * @param openId
      * @param lang
-     * @Author kango2gler@gmail.com
-     * @Date 2017/6/6 16:15
+     * @author kango2gler@gmail.com
+     * @date 2017/6/6 16:15
      * @return
      */
     public OAuth2UserInfoReturnBean getUserInfo(String accessToken,String openId,Lang lang){

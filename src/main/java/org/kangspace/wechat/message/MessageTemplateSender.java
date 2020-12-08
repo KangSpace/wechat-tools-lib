@@ -23,8 +23,8 @@ public class MessageTemplateSender {
      * 需提前刷新accessToken
      * @param messageBean 模版内容 templateId在该对象中
      * @param accessToken accessToken
-     * @Author kango2gler@gmail.com
-     * @Date 2017/2/13 17:20
+     * @author kango2gler@gmail.com
+     * @date 2017/2/13 17:20
      * @return
      */
     public WeChatReturnBean send(MessageBean messageBean, String accessToken){

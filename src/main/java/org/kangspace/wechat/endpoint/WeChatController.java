@@ -58,8 +58,8 @@ public class WeChatController {
      * </pre>
      * @param appId
      * @param state
-     * @Author kango2gler@gmail.com
-     * @Date 2020-11-30 17:43:13
+     * @author kango2gler@gmail.com
+     * @date 2020-11-30 17:43:13
      * @return
      */
     public void auth(HttpServletRequest request,
@@ -90,8 +90,8 @@ public class WeChatController {
      * </pre>
      * @param code
      * @param state 第一个,前的字符串为appId
-     * @Author kango2gler@gmail.com
-     * @Date 2020-11-30 17:43:13
+     * @author kango2gler@gmail.com
+     * @date 2020-11-30 17:43:13
      * @return
      */
     public void authCallback(HttpServletRequest request,
@@ -129,8 +129,8 @@ public class WeChatController {
      * </pre>
      * @param appId
      * @param url
-     * @Author kango2gler@gmail.com
-     * @Date 2016/11/15 17:17
+     * @author kango2gler@gmail.com
+     * @date 2016/11/15 17:17
      * @return
      */
     public JSApiTicketSignBean getWXJSSDKSign(String appId,String url){

@@ -19,8 +19,8 @@ public class MessageTest {
      /**
      * 发送模版消息
      * 需先获取accessToken {@link MpInterfaceAccessTest}
-     * @Author kango2gler@gmail.com
-     * @Date 2017/2/14 10:29
+     * @author kango2gler@gmail.com
+     * @date 2017/2/14 10:29
      *
      */
     @Test

@@ -10,8 +10,8 @@ public interface MyAbstractHttp{
      * POST 请求
      * @param url
      * @param jsonParam  提交的数据,POST时有效 JSON字符串
-     * @Author kango2gler@gmail.com
-     * @Date 2017/2/13 18:16
+     * @author kango2gler@gmail.com
+     * @date 2017/2/13 18:16
      * @return
      */
     String post(String url, String jsonParam);
@@ -25,8 +25,8 @@ public interface MyAbstractHttp{
     /**
      * GET 请求
      * @param url
-     * @Author kango2gler@gmail.com
-     * @Date 2017/2/13 18:12
+     * @author kango2gler@gmail.com
+     * @date 2017/2/13 18:12
      * @return
      */
     String get(String url);

@@ -59,8 +59,8 @@ public class AES {
 
 
      * @param
-     * @Author kango2gler@gmail.com
-     * @Date 2017/2/16 10:04
+     * @author kango2gler@gmail.com
+     * @date 2017/2/16 10:04
      * @return
      */
     private Cipher getAESCipher(int cipherMode) throws Exception {
@@ -82,8 +82,8 @@ public class AES {
     /**
      * AES加密
      * @param srcStr 需要加密的字符串
-     * @Author kango2gler@gmail.com
-     * @Date 2017/2/15 18:47
+     * @author kango2gler@gmail.com
+     * @date 2017/2/15 18:47
      * @return
      */
     public byte[] encrypt(String srcStr) throws Exception {
@@ -92,8 +92,8 @@ public class AES {
     /**
      * AES解密
      * @param cipherByte 需要解密的byte[]
-     * @Author kango2gler@gmail.com
-     * @Date 2017/2/15 18:47
+     * @author kango2gler@gmail.com
+     * @date 2017/2/15 18:47
      * @return
      */
     public String decrypt(byte[] cipherByte) throws Exception {
@@ -103,8 +103,8 @@ public class AES {
     /**
      * AES加密,返回Base64编码串
      * @param
-     * @Author kango2gler@gmail.com
-     * @Date 2017/2/16 9:49
+     * @author kango2gler@gmail.com
+     * @date 2017/2/16 9:49
      * @return
      */
     public String encryptToBase64(String srcString)throws Exception {
@@ -113,8 +113,8 @@ public class AES {
     /**
      * AES加密,返回HEX编码串
      * @param
-     * @Author kango2gler@gmail.com
-     * @Date 2017/2/16 9:49
+     * @author kango2gler@gmail.com
+     * @date 2017/2/16 9:49
      * @return
      */
     public String encryptToHex(String srcString)throws Exception {
@@ -124,8 +124,8 @@ public class AES {
     /**
      * 将Base64编码的 AES加密字符串解密
      * @param ciphertext Base64后字符串
-     * @Author kango2gler@gmail.com
-     * @Date 2017/2/16 10:01
+     * @author kango2gler@gmail.com
+     * @date 2017/2/16 10:01
      * @return
      */
     public String decryptFromBase64(String ciphertext) throws Exception {
@@ -134,8 +134,8 @@ public class AES {
 
     /**
      * AES 模式
-     * @Author kango2gler@gmail.com
-     * @Date 2017/2/16 11:38
+     * @author kango2gler@gmail.com
+     * @date 2017/2/16 11:38
      */
     public static enum EncryptAESType{
         /**

@@ -11,8 +11,8 @@ public class MyHttpUtil {
      * 获取一个http或https client
      * 自动识别http或https
      * @param
-     * @Author kango2gler@gmail.com
-     * @Date 2017/2/13 17:42
+     * @author kango2gler@gmail.com
+     * @date 2017/2/13 17:42
      * @return
      */
     public static MyAbstractHttp getClient(String url){

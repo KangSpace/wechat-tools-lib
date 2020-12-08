@@ -29,8 +29,8 @@ public class GsonUtil {
      * 转换无泛型对象
      * @param json json字符串
      * @param clazz toBean class
-     * @Author kango2gler@gmail.com
-     * @Date 2017/4/1 15:15
+     * @author kango2gler@gmail.com
+     * @date 2017/4/1 15:15
      * @return
      */
     public static <T> T toBean(String json,Class<T> clazz){
@@ -42,8 +42,8 @@ public class GsonUtil {
      * @param json json字符串
      * @param rawClass 原始对象 class
      * @param actualTypes 泛型类型 class
-     * @Author kango2gler@gmail.com
-     * @Date 2017/4/1 15:18
+     * @author kango2gler@gmail.com
+     * @date 2017/4/1 15:18
      * @return
      */
     public static <T> T toBean(String json,final Class<T> rawClass,final Type... actualTypes){

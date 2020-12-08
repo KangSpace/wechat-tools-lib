@@ -24,8 +24,8 @@ public class WeChatConfig {
      * @param redirectUri 回调路径
      * @param scope 授权作用域 {@link OAth2Scope}
      * @param state 重定向后会带上state参数，开发者可以填写a-zA-Z0-9的参数值，最多128字节
-     * @Author kango2gler@gmail.com
-     * @Date 2017/2/13 16:36
+     * @author kango2gler@gmail.com
+     * @date 2017/2/13 16:36
      * @return
      * @see WeChatConfig#getOauth2AuthorizeUrl(String, String, OAth2Scope, String)
      */
@@ -57,8 +57,8 @@ public class WeChatConfig {
     /**
      * 获取网页授权AccessToken URL
      * @param code 网页授权返回的code
-     * @Author kango2gler@gmail.com
-     * @Date 2017/2/13 16:42
+     * @author kango2gler@gmail.com
+     * @date 2017/2/13 16:42
      * @return
      */
     public static String getOauth2AccessTokenUrl(String code){
@@ -80,8 +80,8 @@ public class WeChatConfig {
     /**
      * 获取公众号 AccessToken
      * @param
-     * @Author kango2gler@gmail.com
-     * @Date 2017/2/13 16:47
+     * @author kango2gler@gmail.com
+     * @date 2017/2/13 16:47
      * @return
      */
     public static String getMpAccesstokenUrl() {
@@ -90,8 +90,8 @@ public class WeChatConfig {
     /**
      * 获取公众号 AccessToken
      * @param
-     * @Author kango2gler@gmail.com
-     * @Date 2017/2/13 16:47
+     * @author kango2gler@gmail.com
+     * @date 2017/2/13 16:47
      * @return
      */
     public static String getMpAccessTokenUrl(String appId) {
@@ -103,8 +103,8 @@ public class WeChatConfig {
      * 获取公众号 获取用户基本信息
      * @param accessToken
      * @param openId 用户openId
-     * @Author kango2gler@gmail.com
-     * @Date 2017/2/13 16:48
+     * @author kango2gler@gmail.com
+     * @date 2017/2/13 16:48
      * @return
      */
     public static String getMpUserInfo(String accessToken , String openId) {
@@ -113,8 +113,8 @@ public class WeChatConfig {
     /**
      * 获取公众号 批量获取用户基本信息
      * @param accessToken
-     * @Author kango2gler@gmail.com
-     * @Date 2020/11/09 12:04
+     * @author kango2gler@gmail.com
+     * @date 2020/11/09 12:04
      * @return
      */
     public static String getMpUserInfoBatch(String accessToken) {
@@ -125,8 +125,8 @@ public class WeChatConfig {
      * 获取公众号 获取关注者列表
      * @param accessToken
      * @param nextOpenId 第一个拉取的OPENID，不填默认从头开始拉取
-     * @Author kango2gler@gmail.com
-     * @Date 2020/11/09 11:42
+     * @author kango2gler@gmail.com
+     * @date 2020/11/09 11:42
      * @return
      */
     public static String getMpUserList(String accessToken,String nextOpenId) {
@@ -136,8 +136,8 @@ public class WeChatConfig {
     /**
      * 获取发送模板消息接口 URL
      * @param accessToken
-     * @Author kango2gler@gmail.com
-     * @Date 2017/2/13 16:50
+     * @author kango2gler@gmail.com
+     * @date 2017/2/13 16:50
      * @return
      */
     public static String getMpMessageTemplateSendUrl(String accessToken) {
@@ -147,8 +147,8 @@ public class WeChatConfig {
     /**
      * 获取公众号jssdk jsApiTcket接口 URL
      * @param accessToken
-     * @Author kango2gler@gmail.com
-     * @Date 2017/2/13 16:53
+     * @author kango2gler@gmail.com
+     * @date 2017/2/13 16:53
      * @return
      */
     public static String getMpJsSdkTicketUrl(String accessToken) {
@@ -159,8 +159,8 @@ public class WeChatConfig {
      * 获取网页授权用户信息URL
      * @param accessToken
      * @param openId
-     * @Author kango2gler@gmail.com
-     * @Date 2017/6/6 16:25
+     * @author kango2gler@gmail.com
+     * @date 2017/6/6 16:25
      * @return
      */
     public static String getOAth2UserInfoUrl(String accessToken, String openId,String lang) {
@@ -174,8 +174,8 @@ public class WeChatConfig {
      * 替换 accessToken
      * @param _str 需要替换的字符串
      * @param accessToken
-     * @Author kango2gler@gmail.com
-     * @Date 2017/2/13 16:51
+     * @author kango2gler@gmail.com
+     * @date 2017/2/13 16:51
      * @return
      */
     private static String _replaceAccessToken(String _str, String accessToken){
@@ -185,8 +185,8 @@ public class WeChatConfig {
     /**
      * 替换 appid 和 appsecret
      * @param _str
-     * @Author kango2gler@gmail.com
-     * @Date 2017/2/13 16:34
+     * @author kango2gler@gmail.com
+     * @date 2017/2/13 16:34
      * @return
      */
     private static String _replaceAppIdAndAppSecret(String _str){
@@ -199,8 +199,8 @@ public class WeChatConfig {
     /**
      * 替换 appid
      * @param _str
-     * @Author kango2gler@gmail.com
-     * @Date 2017/2/13 16:34
+     * @author kango2gler@gmail.com
+     * @date 2017/2/13 16:34
      * @return
      */
     private static String _replaceAppId(String _str){
@@ -212,8 +212,8 @@ public class WeChatConfig {
     /**
      * 替换 appsecret
      * @param _str
-     * @Author kango2gler@gmail.com
-     * @Date 2017/2/13 16:34
+     * @author kango2gler@gmail.com
+     * @date 2017/2/13 16:34
      * @return
      */
     private static String _replaceAppSecret(String _str){
@@ -487,14 +487,14 @@ public class WeChatConfig {
     }
     /**
      * 网页授权 作用域
-     * @Author kango2gler@gmail.com
-     * @Date 2017/2/13 16:37
+     * @author kango2gler@gmail.com
+     * @date 2017/2/13 16:37
      */
     public enum OAth2Scope{
         /**
          * snsapi_base （不弹出授权页面，直接跳转，只能获取用户openid）
-         * @Author kango2gler@gmail.com
-         * @Date 2017/2/13 16:38
+         * @author kango2gler@gmail.com
+         * @date 2017/2/13 16:38
          */
         SNSAPI_BASE{
             @Override
@@ -504,8 +504,8 @@ public class WeChatConfig {
         },
         /**
          * snsapi_userinfo （弹出授权页面，可通过openid拿到昵称、性别、所在地。并且，即使在未关注的情况下，只要用户授权，也能获取其信息）
-         * @Author kango2gler@gmail.com
-         * @Date 2017/2/13 16:38
+         * @author kango2gler@gmail.com
+         * @date 2017/2/13 16:38
          */
         SNSAPI_USERINFO{
             @Override

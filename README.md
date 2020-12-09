@@ -1,6 +1,6 @@
 # wechat-tools-lib
-[![license](https://img.shields.io/github/license/KangSpace/wechat-tools-lib)](https://www.gnu.org/licenses/gpl-3.0.en.html)
-[![maven](https://img.shields.io/maven-central/v/org.kangspace.wechat/wechat-tools-lib)]()
+[![license](https://img.shields.io/github/license/KangSpace/wechat-tools-lib)](LICENSE)
+![maven](https://img.shields.io/maven-central/v/org.kangspace.wechat/wechat-tools-lib)
 
 ### 介绍(Introduction)
 该项目集成封装微信公众号相关接口,并提供工具类访问接口。
@@ -108,22 +108,23 @@
                 <a href="doc/javadoc/org/kangspace/wechat/mp/MpInterfaceAccess.html"><code>MpInterfaceAccess</code></a>
             </td>
             <td><small></small><code>getMpUserListBatch(String appId, String accessToken, String nextOpenId, Consumer<List<MpUserBasicInfoReturnBean>> consumer, Function<String,String> retrieveTokenFn)</code></td>
-            <td><small><pre>new MpInterfaceAccess().interfaceAccess.getMpUserListBatch(appId, accessToken, nextOpenId,
-                                                                     new Consumer<List<MpUserBasicInfoReturnBean>>() {
-                                                                         @Override
-                                                                         public void accept(List<MpUserBasicInfoReturnBean> mpUserInfos) {
-                                                                             for (MpUserBasicInfoReturnBean t : mpUserInfos) {
-                                                                                 System.out.println("\t" + t.toString());
-                                                                                 cntNum[0]++;
-                                                                             }
-                                                                             System.out.println();
-                                                                         }
-                                                                     }, new Function<String, String>() {
-                                                                         @Override
-                                                                         public String apply(String t) {
-                                                                             return getAccessToken(t, true);
-                                                                         }
-                                                                     })
+            <td><small><pre>
+                 new MpInterfaceAccess().interfaceAccess.getMpUserListBatch(appId, accessToken, nextOpenId,
+                     new Consumer&lt;List&lt;MpUserBasicInfoReturnBean&gt;&gt;() {
+                         @Override
+                         public void accept(List&lt;MpUserBasicInfoReturnBean&gt; mpUserInfos) {
+                             for (MpUserBasicInfoReturnBean t : mpUserInfos) {
+                                 System.out.println("\t" + t.toString());
+                                 cntNum[0]++;
+                             }
+                             System.out.println();
+                         }
+                     }, new Function&lt;String, String&gt;() {
+                         @Override
+                         public String apply(String t) {
+                             return getAccessToken(t, true);
+                         }
+                     });
         </pre></small></td>                                                            
         </tr>
         <tr>

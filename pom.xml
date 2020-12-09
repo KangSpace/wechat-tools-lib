@@ -7,14 +7,14 @@
     <artifactId>wechat-tools-lib</artifactId>
     <packaging>jar</packaging>
     <version>1.0.2-SNAPSHOT</version>
-    <name>${artifactId}</name>
+    <name>wechat-tools-lib</name>
     <url>https://github.com/KangSpace/wechat-tools-lib</url>
     <description>💬微信公众号接口集成；微信网页开发；微信网页授权；微信公众号模版消息；💬This is a tools lib for WeChat, use for mp.weixin.qq.com.</description>
 
     <licenses>
         <license>
-            <name>GNU GENERAL PUBLIC LICENSE Version 3(GPL-3.0)</name>
-            <url>https://www.gnu.org/licenses/gpl-3.0.en.html</url>
+            <name>MIT License(MIT)</name>
+            <url>https://github.com/KangSpace/wechat-tools-lib/LICENSE</url>
         </license>
     </licenses>
 
@@ -28,7 +28,7 @@
     <scm>
         <connection>scm:git:https://github.com/KangSpace/wechat-tools-lib.git</connection>
         <developerConnection>scm:git:https://github.com/KangSpace/wechat-tools-lib.git</developerConnection>
-        <url>${url}</url>
+        <url>https://github.com/KangSpace/wechat-tools-lib</url>
     </scm>
 
     <profiles>

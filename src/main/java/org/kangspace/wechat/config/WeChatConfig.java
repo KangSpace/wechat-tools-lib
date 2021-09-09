@@ -167,6 +167,26 @@ public class WeChatConfig {
         return _replaceAccessToken(OAUTH2_USER_INFO_URL,accessToken).replace("OPENID",openId).replace("LANG",lang);
     }
 
+    /**************************************企业微信*****************************************************/
+
+    /**
+     * 获取企业微信AccessToken
+     * @param id corpid
+     * @return
+     */
+    public static String getWeWorkAccessTokenUrl(String id) {
+        String secret = getAppIdSecret(id).getAppSecret();
+        return _replaceAppIdAndAppSecret(WE_WORK_ACCESS_TOKEN_URL, id,secret);
+    }
+    /**
+     * 获取企业微信发送消息URL
+     * @param accessToken
+     * @return
+     */
+    public static String getWeWorkMessageSendUrl(String accessToken) {
+        return _replaceAccessToken(WE_WORK_MESSAGE_SEND_URL, accessToken);
+    }
+
 
     /*******************************************************************************************/
 
@@ -220,6 +240,9 @@ public class WeChatConfig {
         return _replaceAppSecret(_str,APP_SECRET);
     }
     private static String _replaceAppSecret(String _str,String appSecret){
+        if (appSecret == null) {
+            appSecret = "";
+        }
         return _str.replace("APPSECRET",appSecret);
     }
 
@@ -283,6 +306,16 @@ public class WeChatConfig {
      */
     public static String MP_JS_SDK_TICKET_URL = "MP_JS_SDK_TICKET_URL";
     /**
+     * WE_WORK_MESSAGE_SEND_URL
+     * 企业微信获取access_token
+     */
+    public static String WE_WORK_ACCESS_TOKEN_URL = "WE_WORK_ACCESS_TOKEN_URL";
+    /**
+     * WE_WORK_MESSAGE_SEND_URL
+     * 企业微信发送消息
+     */
+    public static String WE_WORK_MESSAGE_SEND_URL = "WE_WORK_MESSAGE_SEND_URL";
+    /**
      * 模版id,格式: key:template_id,key2:template_id2... key为自定义的模版类型key,用于程序中获取template_id;template_id为微信模版Id
      */
     public static String MP_MESSAGE_TEMPLATE_IDS = "MP_MESSAGE_TEMPLATE_IDS";
@@ -327,6 +360,8 @@ public class WeChatConfig {
         MP_MESSAGE_TEMPLATE_SEND_URL = WeChatApiUrlConfigHelper.getValue("MP_MESSAGE_TEMPLATE_SEND_URL");
         MP_JS_SDK_TICKET_URL = WeChatApiUrlConfigHelper.getValue("MP_JS_SDK_TICKET_URL");
         MP_MESSAGE_TEMPLATE_IDS = WeChatConfigHelper.getValue("MP_MESSAGE_TEMPLATE_IDS");
+        WE_WORK_ACCESS_TOKEN_URL = WeChatApiUrlConfigHelper.getValue("WE_WORK_ACCESS_TOKEN_URL");
+        WE_WORK_MESSAGE_SEND_URL = WeChatApiUrlConfigHelper.getValue("WE_WORK_MESSAGE_SEND_URL");
         //初始化模版消息Ids
         if (StringUtils.isNotBlank(MP_MESSAGE_TEMPLATE_IDS)) {
             stringValueToMap(MP_MESSAGE_TEMPLATE_IDS,MP_MESSAGE_TEMPLATE_IDS_MAP, new Function<String, String>() {
@@ -350,7 +385,9 @@ public class WeChatConfig {
                 "MP_MESSAGE_TEMPLATE_SEND_URL:"+MP_MESSAGE_TEMPLATE_SEND_URL+"\n"+
                 "MP_JS_SDK_TICKET_URL:"+MP_JS_SDK_TICKET_URL+"\n"+
                 "MP_MESSAGE_TEMPLATE_IDS:"+MP_MESSAGE_TEMPLATE_IDS+"\n"+
-                "MP_MESSAGE_TEMPLATE_IDS_MAP:"+MP_MESSAGE_TEMPLATE_IDS_MAP+"\n"
+                "MP_MESSAGE_TEMPLATE_IDS_MAP:"+MP_MESSAGE_TEMPLATE_IDS_MAP+"\n"+
+                "WE_WORK_ACCESS_TOKEN_URL:"+WE_WORK_ACCESS_TOKEN_URL+"\n"+
+                "WE_WORK_MESSAGE_SEND_URL:"+WE_WORK_MESSAGE_SEND_URL+"\n"
         );
 
     }
@@ -359,13 +396,13 @@ public class WeChatConfig {
      * APP_ID_SECRETS_MAP初始化
      */
     private static void _AppIdSecretsMapInit(){
+        //DEFAULT处理,
+        if (APP_ID != null) {
+            //将APP_ID作为default添加到APP_ID_SECRETS_MAP中第一个位置
+            APP_ID_SECRETS_MAP.put(DEFAULT_APP_ID_SECRET_KEY, new AppIdSecret(APP_ID, APP_SECRET));
+        }
         //初始化AppIdSecrets
         if (StringUtils.isNotBlank(APP_ID_SECRETS)) {
-            //DEFAULT处理,
-            if (APP_ID != null) {
-                //将APP_ID作为default添加到APP_ID_SECRETS_MAP中第一个位置
-                APP_ID_SECRETS_MAP.put(DEFAULT_APP_ID_SECRET_KEY, new AppIdSecret(APP_ID, APP_SECRET));
-            }
             final AtomicInteger i = new AtomicInteger();
             stringValueToMap(APP_ID_SECRETS,APP_ID_SECRETS_MAP, new Function<String, AppIdSecret>() {
                 @Override

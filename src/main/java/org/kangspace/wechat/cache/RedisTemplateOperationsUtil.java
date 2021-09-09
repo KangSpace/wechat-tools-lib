@@ -10,7 +10,9 @@ import org.springframework.data.redis.core.types.Expiration;
 import org.springframework.data.redis.serializer.RedisSerializer;
 import org.springframework.util.Assert;
 import redis.clients.jedis.BinaryJedisCluster;
+import redis.clients.jedis.JedisCluster;
 
+import java.lang.reflect.Method;
 import java.util.concurrent.TimeUnit;
 
 /**
@@ -39,16 +41,31 @@ public class RedisTemplateOperationsUtil {
                              @Override
                              public Boolean doInRedis(RedisConnection connection) throws DataAccessException {
                                  try {
-                                     byte[] nxxx = JedisConverters.toSetCommandNxXxArgument(RedisStringCommands.SetOption.ifAbsent());
-                                     byte[] expx = JedisConverters.toSetCommandExPxArgument(expiration);
-                                     return "OK".equals(((BinaryJedisCluster) (connection.getNativeConnection())).set(rawKey, rawValue, nxxx, expx, expiration.getExpirationTime()));
+                                    /* if (isJedisConvertersSpringBoot1Version()) {
+                                         byte[] nxxx = JedisConverters.toSetCommandNxXxArgument(RedisStringCommands.SetOption.ifAbsent());
+                                         byte[] expx = JedisConverters.toSetCommandExPxArgument(expiration);
+                                         return "OK".equals(((BinaryJedisCluster) (connection.getNativeConnection())).set(rawKey, rawValue, nxxx, expx, expiration.getExpirationTime()));
+                                     }else if(connection instanceof RedisStringCommands){
+                                         return connection.set(rawKey,rawValue,expiration,RedisStringCommands.SetOption.ifAbsent());
+                                     }*/
+                                     return connection.set(rawKey,rawValue,expiration,RedisStringCommands.SetOption.ifAbsent());
                                  } catch (Exception e) {
                                      e.printStackTrace();
-                                     return false;
                                  }
+                                 return false;
                              }
                          },
                         true);
+    }
+
+    private static boolean isJedisConvertersSpringBoot1Version(){
+        try {
+            Method method = JedisConverters.class.getDeclaredMethod("toSetCommandNxXxArgument", RedisStringCommands.SetOption.class);
+            return method.getReturnType()!=null && method.getReturnType().isArray();
+        } catch (NoSuchMethodException e) {
+            e.printStackTrace();
+        }
+        return false;
     }
 
     public static <K,V> byte[] getRawKey(RedisTemplate<K, ?> redisTemplate, Object key) {

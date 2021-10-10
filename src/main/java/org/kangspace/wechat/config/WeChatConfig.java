@@ -187,6 +187,15 @@ public class WeChatConfig {
         return _replaceAccessToken(WE_WORK_MESSAGE_SEND_URL, accessToken);
     }
 
+    /**
+     * 获取企业微信通过小程序JsCode临时登录凭证校验URL
+     * @param accessToken
+     * @param code
+     * @return
+     */
+    public static String getWeWorkMiniProgramCode2SessionUrl(String accessToken,String code) {
+        return _replaceCode(_replaceAccessToken(WE_WORK_MINI_PROGRAM_CODE_2_SESSION_URL, accessToken),code);
+    }
 
     /*******************************************************************************************/
 
@@ -200,6 +209,17 @@ public class WeChatConfig {
      */
     private static String _replaceAccessToken(String _str, String accessToken){
         return _str.replace("ACCESS_TOKEN",accessToken);
+    }
+
+    /**
+     * 替换 code
+     * @param code 需要替换的字符串
+     * @author kango2gler@gmail.com
+     * @date 2021/10/10 20:35
+     * @return
+     */
+    private static String _replaceCode(String _str, String code){
+        return _str.replace("CODE",code);
     }
 
     /**
@@ -320,6 +340,11 @@ public class WeChatConfig {
      */
     public static String MP_MESSAGE_TEMPLATE_IDS = "MP_MESSAGE_TEMPLATE_IDS";
     /**
+     * WE_WORK_MINI_PROGRAM_CODE_2_SESSION_URL
+     * 企业微信通过小程序JsCode临时登录凭证校验
+     */
+    public static String WE_WORK_MINI_PROGRAM_CODE_2_SESSION_URL = "WE_WORK_MINI_PROGRAM_CODE_2_SESSION_URL";
+    /**
      * 模版KeyTemplateId Map
      */
     public static Map<String,String> MP_MESSAGE_TEMPLATE_IDS_MAP = new HashMap<>();
@@ -362,6 +387,7 @@ public class WeChatConfig {
         MP_MESSAGE_TEMPLATE_IDS = WeChatConfigHelper.getValue("MP_MESSAGE_TEMPLATE_IDS");
         WE_WORK_ACCESS_TOKEN_URL = WeChatApiUrlConfigHelper.getValue("WE_WORK_ACCESS_TOKEN_URL");
         WE_WORK_MESSAGE_SEND_URL = WeChatApiUrlConfigHelper.getValue("WE_WORK_MESSAGE_SEND_URL");
+        WE_WORK_MINI_PROGRAM_CODE_2_SESSION_URL = WeChatApiUrlConfigHelper.getValue("WE_WORK_MINI_PROGRAM_CODE_2_SESSION_URL");
         //初始化模版消息Ids
         if (StringUtils.isNotBlank(MP_MESSAGE_TEMPLATE_IDS)) {
             stringValueToMap(MP_MESSAGE_TEMPLATE_IDS,MP_MESSAGE_TEMPLATE_IDS_MAP, new Function<String, String>() {
@@ -387,7 +413,8 @@ public class WeChatConfig {
                 "MP_MESSAGE_TEMPLATE_IDS:"+MP_MESSAGE_TEMPLATE_IDS+"\n"+
                 "MP_MESSAGE_TEMPLATE_IDS_MAP:"+MP_MESSAGE_TEMPLATE_IDS_MAP+"\n"+
                 "WE_WORK_ACCESS_TOKEN_URL:"+WE_WORK_ACCESS_TOKEN_URL+"\n"+
-                "WE_WORK_MESSAGE_SEND_URL:"+WE_WORK_MESSAGE_SEND_URL+"\n"
+                "WE_WORK_MESSAGE_SEND_URL:"+WE_WORK_MESSAGE_SEND_URL+"\n"+
+                "WE_WORK_MINI_PROGRAM_CODE_2_SESSION_URL:"+WE_WORK_MINI_PROGRAM_CODE_2_SESSION_URL+"\n"
         );
 
     }

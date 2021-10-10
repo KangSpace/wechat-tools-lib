@@ -6,6 +6,7 @@ import org.kangspace.wechat.mp.AccessTokenReturnBean;
 import org.kangspace.wechat.util.WeChatUtil;
 import org.kangspace.wechat.util.http.MyAbstractHttp;
 import org.kangspace.wechat.util.http.MyHttpUtil;
+import org.kangspace.wework.mini.Code2SessionReturnBean;
 
 import java.util.logging.Logger;
 
@@ -39,6 +40,20 @@ public class WeWorkInterfaceAccess extends WeChatCapableRetrieveToken {
     public AccessTokenReturnBean getAccessToken(String appId){
         MyAbstractHttp client = MyHttpUtil.getClient(WeChatConfig.getWeWorkAccessTokenUrl(appId));
         AccessTokenReturnBean rb = WeChatUtil.asReturnBean(client.get(),AccessTokenReturnBean.class);
+        if (rb != null) {
+            logger.info(rb.toString());
+        }
+        return rb;
+    }
+
+    /**
+     * 企业微信通过小程序JsCode临时登录凭证校验
+     * @param accessToken
+     * @param code
+     */
+    public Code2SessionReturnBean code2Session(String accessToken,String code) {
+        MyAbstractHttp client = MyHttpUtil.getClient(WeChatConfig.getWeWorkMiniProgramCode2SessionUrl(accessToken,code));
+        Code2SessionReturnBean rb = WeChatUtil.asReturnBean(client.get(),Code2SessionReturnBean.class);
         if (rb != null) {
             logger.info(rb.toString());
         }

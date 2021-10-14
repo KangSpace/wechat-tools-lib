@@ -28,6 +28,12 @@ public class Code2SessionReturnBean extends WeChatReturnBean {
     @JsonProperty("session_key")
     private String sessionKey;
 
+    /**
+     * 	设备ID
+     */
+    @JsonProperty("deviceid")
+    private String deviceId;
+
     public String getCorpId() {
         return corpId;
     }
@@ -50,5 +56,13 @@ public class Code2SessionReturnBean extends WeChatReturnBean {
 
     public void setSessionKey(String sessionKey) {
         this.sessionKey = sessionKey;
+    }
+
+    public String getDeviceId() {
+        return deviceId;
+    }
+
+    public void setDeviceId(String deviceId) {
+        this.deviceId = deviceId;
     }
 }

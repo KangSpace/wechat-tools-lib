@@ -1,5 +1,6 @@
 package org.kangspace.wechat.util;
 
+import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.apache.commons.lang.StringUtils;
 
@@ -25,7 +26,9 @@ public class WeChatUtil {
             return null;
         }
         try {
-            return (T) new ObjectMapper().readValue(jsonStr, cls);
+            ObjectMapper objectMapper = new ObjectMapper();
+            objectMapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
+            return (T) objectMapper.readValue(jsonStr, cls);
         } catch (IOException e) {
             throw new IllegalArgumentException(e.getMessage(), e);
         }

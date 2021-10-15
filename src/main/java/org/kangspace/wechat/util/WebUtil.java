@@ -196,6 +196,7 @@ public class WebUtil {
     public static void writeAlertMsg(String msg, HttpServletResponse response){
         PrintWriter out = null;
         try {
+            response.setCharacterEncoding("UTF-8");
             out = response.getWriter();
             out.print("<script type=\"text/javascript\">alert(\""+msg+"\");document.write(\""+msg+"\");document.close();</script>");
             out.flush();

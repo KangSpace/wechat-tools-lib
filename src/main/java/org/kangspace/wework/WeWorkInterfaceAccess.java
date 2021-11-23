@@ -59,4 +59,18 @@ public class WeWorkInterfaceAccess extends WeChatCapableRetrieveToken {
         }
         return rb;
     }
+
+    /**
+     * 获取访问用户身份(根据code获取成员信息)
+     * @param accessToken
+     * @param code
+     */
+    public UserInfoReturnBean userGetUserInfo(String accessToken,String code) {
+        MyAbstractHttp client = MyHttpUtil.getClient(WeChatConfig.getWeWorkUserGetUserInfoUrl(accessToken,code));
+        UserInfoReturnBean rb = WeChatUtil.asReturnBean(client.get(),UserInfoReturnBean.class);
+        if (rb != null) {
+            logger.info(rb.toString());
+        }
+        return rb;
+    }
 }

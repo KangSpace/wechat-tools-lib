@@ -179,6 +179,15 @@ public class WeChatConfig {
         return _replaceAppIdAndAppSecret(WE_WORK_ACCESS_TOKEN_URL, id,secret);
     }
     /**
+     * 获取访问用户身份(根据code获取成员信息)
+     * @param accessToken accessToken
+     * @param code code
+     * @return url
+     */
+    public static String getWeWorkUserGetUserInfoUrl(String accessToken,String code) {
+        return _replaceCode(_replaceAccessToken(WE_WORK_USER_GET_USER_INFO_URL, accessToken),code);
+    }
+    /**
      * 获取企业微信发送消息URL
      * @param accessToken
      * @return
@@ -336,6 +345,12 @@ public class WeChatConfig {
      */
     public static String WE_WORK_MESSAGE_SEND_URL = "WE_WORK_MESSAGE_SEND_URL";
     /**
+     * WE_WORK_USER_GET_USER_INFO_URL
+     * 获取访问用户身份(根据code获取成员信息)
+     *
+     */
+    public static String WE_WORK_USER_GET_USER_INFO_URL = "WE_WORK_USER_GET_USER_INFO_URL";
+    /**
      * 模版id,格式: key:template_id,key2:template_id2... key为自定义的模版类型key,用于程序中获取template_id;template_id为微信模版Id
      */
     public static String MP_MESSAGE_TEMPLATE_IDS = "MP_MESSAGE_TEMPLATE_IDS";
@@ -387,6 +402,7 @@ public class WeChatConfig {
         MP_MESSAGE_TEMPLATE_IDS = WeChatConfigHelper.getValue("MP_MESSAGE_TEMPLATE_IDS");
         WE_WORK_ACCESS_TOKEN_URL = WeChatApiUrlConfigHelper.getValue("WE_WORK_ACCESS_TOKEN_URL");
         WE_WORK_MESSAGE_SEND_URL = WeChatApiUrlConfigHelper.getValue("WE_WORK_MESSAGE_SEND_URL");
+        WE_WORK_USER_GET_USER_INFO_URL = WeChatApiUrlConfigHelper.getValue("WE_WORK_USER_GET_USER_INFO_URL");
         WE_WORK_MINI_PROGRAM_CODE_2_SESSION_URL = WeChatApiUrlConfigHelper.getValue("WE_WORK_MINI_PROGRAM_CODE_2_SESSION_URL");
         //初始化模版消息Ids
         if (StringUtils.isNotBlank(MP_MESSAGE_TEMPLATE_IDS)) {
@@ -414,6 +430,7 @@ public class WeChatConfig {
                 "MP_MESSAGE_TEMPLATE_IDS_MAP:"+MP_MESSAGE_TEMPLATE_IDS_MAP+"\n"+
                 "WE_WORK_ACCESS_TOKEN_URL:"+WE_WORK_ACCESS_TOKEN_URL+"\n"+
                 "WE_WORK_MESSAGE_SEND_URL:"+WE_WORK_MESSAGE_SEND_URL+"\n"+
+                "WE_WORK_USER_GET_USER_INFO_URL:"+WE_WORK_USER_GET_USER_INFO_URL+"\n"+
                 "WE_WORK_MINI_PROGRAM_CODE_2_SESSION_URL:"+WE_WORK_MINI_PROGRAM_CODE_2_SESSION_URL+"\n"
         );
 

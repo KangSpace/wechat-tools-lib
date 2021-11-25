@@ -16,6 +16,10 @@ import java.util.Date;
 public abstract class AbstractWeChatCacheOperator<T extends AbstractWeChatCacheOperator.ExpireValue<V>, V> implements WeChatCacheOperator<T,V> {
     private Logger log = LoggerFactory.getLogger(this.getClass());
     /**
+     * 默认超时时长
+     */
+    protected static final Long DEFAULT_EXPIRE_SECOND = 7200L;
+    /**
      * 获取原始数据时的分布式锁等待超时时间,默认10s
      */
     private Long rawlockWaitMilliseconds = 10_1000L;

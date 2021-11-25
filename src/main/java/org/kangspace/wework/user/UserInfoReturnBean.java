@@ -1,4 +1,4 @@
-package org.kangspace.wework;
+package org.kangspace.wework.user;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import org.kangspace.wechat.bean.WeChatReturnBean;

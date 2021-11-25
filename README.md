@@ -6,11 +6,20 @@
 该项目集成封装微信公众号相关接口,并提供工具类访问接口。
 
 ### 项目实现功能：  
+
+1. 微信公众号
 * 集成微信网页授权接口及网页授权获取用户信息
-* 集成微信公众号获取Token及Token缓存
+* 集成微信公众号获取AccessToken,JsApiTicket及其缓存
 * 集成微信公众号拉取用户列表及用户信息
 * 集成微信公众号发送模版消息
 * 集成微信公众号JS签名
+
+2. 企业微信
+* 集成企业微信网页授权接口及网页授权获取用户信息
+* 集成企业微信获取Token及Token缓存
+   * 集成微信公众号获取AccessToken,JsApiTicket,AppJsApiTicket(应用JS-SDK)及其缓存
+* 集成企业微信公众号发送应用消息
+* 集成企业微信公众号JS签名(企业JS-SDK签名和应用JS-SDK签名)
 
 ### API列表：
 <table style="table-layout:fixed;text-align:left;">
@@ -167,3 +176,13 @@
 ### MAVEN：
 
 [OSSRH-62558](https://issues.sonatype.org/browse/OSSRH-62558)
+
+> 可自行执行mvn install打包
+
+```
+<dependency>
+    <groupId>org.kangspace.wechat</groupId>
+    <artifactId>wechat-tools-lib</artifactId>
+    <version>1.0.1</version>
+</dependency>
+```

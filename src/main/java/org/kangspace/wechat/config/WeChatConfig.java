@@ -206,6 +206,24 @@ public class WeChatConfig {
         return _replaceCode(_replaceAccessToken(WE_WORK_MINI_PROGRAM_CODE_2_SESSION_URL, accessToken),code);
     }
 
+    /**
+     * 企业微信企业jssdk jsApiTcket获取接口URL
+     * @param accessToken
+     * @return
+     */
+    public static String getWeWorkJsSdkTicketUrl(String accessToken) {
+        return _replaceAccessToken(WE_WORK_JS_SDK_TICKET_URL, accessToken);
+    }
+
+    /**
+     * 企业微信应用jssdk jsApiTcket获取接口
+     * @param accessToken
+     * @return
+     */
+    public static String getWeWorkAppJsSdkTicketUrl(String accessToken) {
+        return _replaceAccessToken(WE_WORK_APP_JS_SDK_TICKET_URL, accessToken);
+    }
+
     /*******************************************************************************************/
 
     /**
@@ -360,6 +378,16 @@ public class WeChatConfig {
      */
     public static String WE_WORK_MINI_PROGRAM_CODE_2_SESSION_URL = "WE_WORK_MINI_PROGRAM_CODE_2_SESSION_URL";
     /**
+     * WE_WORK_JS_SDK_TICKET_URL
+     * 企业微信企业jssdk jsApiTcket获取接口
+     */
+    public static String WE_WORK_JS_SDK_TICKET_URL = "WE_WORK_JS_SDK_TICKET_URL";
+    /**
+     * WE_WORK_APP_JS_SDK_TICKET_URL
+     * 企业微信应用jssdk jsApiTcket获取接口
+     */
+    public static String WE_WORK_APP_JS_SDK_TICKET_URL = "WE_WORK_APP_JS_SDK_TICKET_URL";
+    /**
      * 模版KeyTemplateId Map
      */
     public static Map<String,String> MP_MESSAGE_TEMPLATE_IDS_MAP = new HashMap<>();
@@ -404,6 +432,8 @@ public class WeChatConfig {
         WE_WORK_MESSAGE_SEND_URL = WeChatApiUrlConfigHelper.getValue("WE_WORK_MESSAGE_SEND_URL");
         WE_WORK_USER_GET_USER_INFO_URL = WeChatApiUrlConfigHelper.getValue("WE_WORK_USER_GET_USER_INFO_URL");
         WE_WORK_MINI_PROGRAM_CODE_2_SESSION_URL = WeChatApiUrlConfigHelper.getValue("WE_WORK_MINI_PROGRAM_CODE_2_SESSION_URL");
+        WE_WORK_JS_SDK_TICKET_URL = WeChatApiUrlConfigHelper.getValue("WE_WORK_JS_SDK_TICKET_URL");
+        WE_WORK_APP_JS_SDK_TICKET_URL = WeChatApiUrlConfigHelper.getValue("WE_WORK_APP_JS_SDK_TICKET_URL");
         //初始化模版消息Ids
         if (StringUtils.isNotBlank(MP_MESSAGE_TEMPLATE_IDS)) {
             stringValueToMap(MP_MESSAGE_TEMPLATE_IDS,MP_MESSAGE_TEMPLATE_IDS_MAP, new Function<String, String>() {

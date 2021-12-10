@@ -139,7 +139,6 @@
         <tr>
             <td rowspan=3>发送模版消息</td>
             <td><small>org.kangspace.wechat.message.</small><br>
-                <code>MessageTemplateSender</code>
                 <a href="doc/javadoc/org/kangspace/wechat/message/MessageTemplateSender.html"><code>MessageTemplateSender</code></a>
             </td>
             <td><small>WeChatReturnBean </small><code>send(MessageBean messageBean, String accessToken)</code></td>
@@ -158,6 +157,14 @@
             </td>
             <td><small>SendHelper.SendObject </small><code>get(String appId, String accessToken, String templateId, String openId, String key1Val, String key2Val, MessageBean.Miniprogram miniprogram)</code></td>
             <td>--</td>
+        </tr>
+        <tr>
+            <td >企业微信相关集成</td>
+            <td><small>org.kangspace.wework</small><br>
+                <code>WeWorkInterfaceAccess</code>
+            </td>
+            <td> --  </td>
+            <td> --  </td>
         </tr>
     </tbody>
 </table>

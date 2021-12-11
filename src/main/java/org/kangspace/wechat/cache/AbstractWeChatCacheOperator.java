@@ -13,64 +13,69 @@ import java.util.Date;
  * @author kango2gler@gmail.com
  * @date 2020/12/7 13:52
  */
-public abstract class AbstractWeChatCacheOperator<T extends AbstractWeChatCacheOperator.ExpireValue<V>, V> implements WeChatCacheOperator<T,V> {
+public abstract class AbstractWeChatCacheOperator<T extends AbstractWeChatCacheOperator.ExpireValue<V>, V> implements WeChatCacheOperator<T, V> {
     private Logger log = LoggerFactory.getLogger(this.getClass());
     /**
      * 默认超时时长
      */
     protected static final Long DEFAULT_EXPIRE_SECOND = 7200L;
     /**
+     * 同步锁超时时间,10s
+     */
+    public static final int rawLockWaitSeconds = 10;
+    /**
      * 获取原始数据时的分布式锁等待超时时间,默认10s
      */
-    private Long rawlockWaitMilliseconds = 10_1000L;
+    private static final Long rawLockWaitMilliseconds = rawLockWaitSeconds * 1000L;
     /**
-     * 默认10ms
+     * 默认100ms
      */
-    private Long rawlockRecheckMilliseconds = 10L;
+    private static final Long rawLockRecheckMilliseconds = 100L;
 
     /**
      * <pre>
      *  获取缓存信息,缓存失效时,重新刷新缓存
      *  </pre>
-     * @param appId 获取缓存的的appId
-     * @param key 缓存key
+     *
+     * @param appId     获取缓存的的appId
+     * @param key       缓存key
      * @param isRefresh 是否刷新缓存
      * @return
      */
-    public T get(String appId, String key,Boolean isRefresh) {
+    public T get(String appId, String key, Boolean isRefresh) {
         T cache = getCache(appId, key);
         if (cache == null || isRefresh) {
             int waitCount = 0;
-            RawLock rawLock= getRawLock(key);
+            RawLock rawLock = getRawLock(key);
             if (rawLock == null) {
                 throw new NullPointerException("rawLock mush be not null");
             }
             try {
                 //token申请时,做10s分布式锁,获取不到锁时,最多等待10s
                 while (!rawLock.getLock()) {
-                    log.debug("get(String appId,String key,Boolean isRefresh),appId:{} data key:{} [not get the lock] ,waiting the {} time(s)",appId, key, waitCount + 1);
-                    if (waitCount >= rawlockWaitMilliseconds/rawlockRecheckMilliseconds) {
+                    log.debug("get(String appId,String key,Boolean isRefresh),appId:{} data key:{} [not get the lock] ,waiting the {} time(s)", appId, key, waitCount + 1);
+                    if (waitCount >= rawLockWaitMilliseconds / rawLockRecheckMilliseconds) {
                         break;
                     }
                     try {
-                        Thread.sleep(rawlockRecheckMilliseconds);
+                        Thread.sleep(rawLockRecheckMilliseconds);
                     } catch (InterruptedException e) {
                     }
                     waitCount++;
                 }
                 //等待后拿到锁时,重新获取缓存,缓存不存在时继续获取数据
                 if (waitCount > 0) {
-                    cache = getCache(appId,key);
+                    cache = getCache(appId, key);
                     if (cache != null) {
-                        log.debug("get(String appId,String key,Boolean isRefresh),appId:{} data key:{} [re-get the lock ,and found cache]:",appId, key, cache);
+                        log.debug("get(String appId,String key,Boolean isRefresh),appId:{} data key:{} [re-get the lock ,and found cache]:", appId, key, cache);
                         return cache;
                     }
                 }
-                log.debug("get(String appId,String key,Boolean isRefresh),appId:{}key:{} [get the lock ,and get new value]",appId, key);
+                log.debug("get(String appId,String key,Boolean isRefresh),appId:{}key:{} [get the lock ,and get new value]", appId, key);
                 cache = getRaw(appId);
                 if (cache != null) {
                     cache = saveCache(appId, key, cache, cache.getExpiresSeconds());
-                    log.debug("get(String appId,String key,Boolean isRefresh),appId:{},key:{}  [got the lock ,and refreshed cache]:{}",appId, key, cache);
+                    log.debug("get(String appId,String key,Boolean isRefresh),appId:{},key:{}  [got the lock ,and refreshed cache]:{}", appId, key, cache);
                 }
             } catch (Exception e) {
                 log.error(e.getMessage(), e);
@@ -88,12 +93,14 @@ public abstract class AbstractWeChatCacheOperator<T extends AbstractWeChatCacheO
     public V get(String appId, String key) {
         return get(appId, key, Boolean.FALSE).getValue();
     }
+
     /**
      * 通过默认key刷新缓存
+     *
      * @return
      */
-    public V refresh(String appId,String key) {
-        return refreshCache(appId,key).getValue();
+    public V refresh(String appId, String key) {
+        return refreshCache(appId, key).getValue();
     }
 
     /**
@@ -101,6 +108,7 @@ public abstract class AbstractWeChatCacheOperator<T extends AbstractWeChatCacheO
      * 获取原始数据时的分布式锁,只有获取到锁的记录更新数据;
      * 该锁应该为带超时时间的分布式锁
      * </pre>
+     *
      * @return
      */
     public abstract RawLock getRawLock(String key);
@@ -132,6 +140,15 @@ public abstract class AbstractWeChatCacheOperator<T extends AbstractWeChatCacheO
         private Long expiresSeconds;
         private Date cTime;
 
+        public ExpireValue() {
+        }
+
+        public ExpireValue(T value, Long expiresSeconds) {
+            this.value = value;
+            this.expiresSeconds = expiresSeconds;
+            this.cTime = new Date();
+        }
+
         public T getValue() {
             return value;
         }
@@ -156,15 +173,6 @@ public abstract class AbstractWeChatCacheOperator<T extends AbstractWeChatCacheO
             this.cTime = cTime;
         }
 
-        public ExpireValue() {
-        }
-
-        public ExpireValue(T value, Long expiresSeconds) {
-            this.value = value;
-            this.expiresSeconds = expiresSeconds;
-            this.cTime = new Date();
-        }
-
         @Override
         public String toString() {
             return "ExpireValue{" +
@@ -181,7 +189,7 @@ public abstract class AbstractWeChatCacheOperator<T extends AbstractWeChatCacheO
      * 用于提供锁结果及解锁操作
      * </pre>
      */
-    public static abstract class RawLock{
+    public static abstract class RawLock {
         /**
          * 是否获取到锁
          */
@@ -189,6 +197,7 @@ public abstract class AbstractWeChatCacheOperator<T extends AbstractWeChatCacheO
 
         /**
          * 解锁
+         *
          * @return
          */
         public abstract Boolean releaseLock();
@@ -203,9 +212,7 @@ public abstract class AbstractWeChatCacheOperator<T extends AbstractWeChatCacheO
 
         @Override
         public String toString() {
-            return "RawLock{" +
-                    "lock=" + lock +
-                    '}';
+            return "RawLock{" + "lock=" + lock + '}';
         }
     }
 }

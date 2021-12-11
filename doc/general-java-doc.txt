@@ -1,2 +1,5 @@
 -- 参数: encoding utf-8 -docencoding utf-8
+-- windows
 javadoc.exe -private -splitindex -author -version -encoding utf-8 -docencoding utf-8 -d doc\javadoc
+-- linux/
+javadoc -private -splitindex -use -author -version -d /{path}/wechat-tools-lib/doc/javadoc

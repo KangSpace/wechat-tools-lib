@@ -16,17 +16,26 @@ import java.util.Objects;
  * @date 2021/08/28 16:16:32
  */
 public class WeWorkAccessTokenCache extends AbstractRedisWeChatCacheOperator<AbstractRedisWeChatCacheOperator.ExpireValue<String>, String> {
+    /**
+     * 缓存Key默认前缀
+     */
+    private static final String CACHE_KEY_DEFAULT_PREFIX = "wework";
+
     private WeWorkInterfaceAccess weWorkInterfaceAccess;
 
     public WeWorkAccessTokenCache(String cacheKeyPrefix, Long expiresSeconds) {
+        this(cacheKeyPrefix, expiresSeconds, new WeWorkInterfaceAccess());
+    }
+
+    public WeWorkAccessTokenCache(String cacheKeyPrefix, Long expiresSeconds,WeWorkInterfaceAccess weWorkInterfaceAccess) {
         super();
         this.setCacheKeyPrefix(cacheKeyPrefix);
         this.setExpiresSeconds(expiresSeconds);
-        weWorkInterfaceAccess = new WeWorkInterfaceAccess();
+        this.weWorkInterfaceAccess = weWorkInterfaceAccess;
     }
 
     public WeWorkAccessTokenCache() {
-        this(null, DEFAULT_EXPIRE_SECOND);
+        this(CACHE_KEY_DEFAULT_PREFIX, DEFAULT_EXPIRE_SECOND);
     }
 
     @Override
@@ -34,5 +43,13 @@ public class WeWorkAccessTokenCache extends AbstractRedisWeChatCacheOperator<Abs
         AccessTokenReturnBean bean = weWorkInterfaceAccess.getAccessToken(appId);
         Objects.requireNonNull(bean, "获取AccessToken错误,获取为空");
         return new ExpireValue<>(bean.getAccessToken(), bean.getExpiresIn().longValue());
+    }
+
+    public WeWorkInterfaceAccess getWeWorkInterfaceAccess() {
+        return weWorkInterfaceAccess;
+    }
+
+    public void setWeWorkInterfaceAccess(WeWorkInterfaceAccess weWorkInterfaceAccess) {
+        this.weWorkInterfaceAccess = weWorkInterfaceAccess;
     }
 }

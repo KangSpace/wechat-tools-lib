@@ -10,7 +10,7 @@ import org.kangspace.wechat.util.jdk18.Function;
  * </pre>
  *
  * @author kango2gler@gmail.com
- * @date 2020/12/4 11:07
+ * @since 2020/12/4 11:07
  */
 public abstract class WeChatCapableRetrieveToken {
 
@@ -20,7 +20,7 @@ public abstract class WeChatCapableRetrieveToken {
      * @param returnBean 请求微信返回的ReturnBean
      * @param retrieveTokenFn input:appId, return: newAccessToken
      * @param retry input: accessToken, return T
-     * @return
+     * @return T
      */
     public <T> T retrieveTokenRetry(String appId, WeChatReturnBean returnBean, Function<String, String> retrieveTokenFn, Function<String, T> retry) {
         if (!WeChatReturnBean.isSuccess(returnBean) && WeChatReturnBean.isAccessTokenInvalid(returnBean)) {

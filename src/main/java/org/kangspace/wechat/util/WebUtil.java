@@ -169,8 +169,7 @@ public class WebUtil {
 
     /**
      * 是否为微信浏览器请求
-     * @param request
-     * @return
+     * @param request request
      */
     public static void validIsWeiXinBroswer(HttpServletRequest request){
         if (!isWeiXinBroswer(request)) {
@@ -179,8 +178,8 @@ public class WebUtil {
     }
     /**
      * 是否为微信浏览器请求
-     * @param request
-     * @return
+     * @param request request
+     * @return boolean
      */
     public static boolean isWeiXinBroswer(HttpServletRequest request){
         String agent = request.getHeader("User-Agent");
@@ -210,7 +209,6 @@ public class WebUtil {
      * 输出字符串
      * @param msg
      * @param response
-     * @throws IOException
      */
     public static void write(String msg, HttpServletResponse response){
         PrintWriter out = null;
@@ -226,10 +224,10 @@ public class WebUtil {
 
     /**
      * 获取服务器路径
-     * @param
+     * @param request request
      * @author kango2gler@gmail.com
-     * @date 2017/1/5 16:43
-     * @return
+     * @since 2017/1/5 16:43
+     * @return String
      */
     public static String getBasePath(HttpServletRequest request){
         return request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+"/";
@@ -239,8 +237,8 @@ public class WebUtil {
      * 获取项目路径
      * @param
      * @author kango2gler@gmail.com
-     * @date 2017/1/5 16:43
-     * @return
+     * @since 2017/1/5 16:43
+     * @return String
      */
     public static String getProjectPath(HttpServletRequest request){
         return getBasePath(request)+request.getContextPath()+"/";
@@ -255,8 +253,7 @@ public class WebUtil {
      * @param maxAge
      * @param isHttpOnly
      * @author kango2gler@gmail.com
-     * @date 2017/1/7 19:54
-     * @return
+     * @since 2017/1/7 19:54
      */
     public static void setCookie(HttpServletResponse response, String name, String value, String domain, String path, int maxAge, boolean isHttpOnly){
         StringBuffer sb = new StringBuffer();

@@ -2,8 +2,8 @@ package org.kangspace.wechat.message;
 
 /**
  * @author kango2gler@gmail.com
- * @desc 模版数据 data实体
- * @date 2017/2/13 17:00
+ *  模版数据 data实体
+ * @since 2017/2/13 17:00
  */
 public class MessageTemplateDataBean {
     /**

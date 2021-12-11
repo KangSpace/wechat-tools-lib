@@ -6,8 +6,8 @@ import org.kangspace.wechat.bean.WeChatReturnBean;
 
 /**
  * @author kango2gler@gmail.com
- * @desc accessTokenBean
- * @date 2017/2/14 10:04
+ *  accessTokenBean
+ * @since 2017/2/14 10:04
  */
 public class AccessTokenReturnBean extends WeChatReturnBean {
     @JsonProperty("access_token")

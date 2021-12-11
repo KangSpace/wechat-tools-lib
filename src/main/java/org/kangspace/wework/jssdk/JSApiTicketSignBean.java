@@ -2,8 +2,8 @@ package org.kangspace.wework.jssdk;
 
 /**
  * @author kango2gler@gmail.com
- * @desc JSApiTicketSignBean
- * @date 2021/11/24 23:52:48
+ *  JSApiTicketSignBean
+ * @since 2021/11/24 23:52:48
  */
 public class JSApiTicketSignBean {
     private String corpId;

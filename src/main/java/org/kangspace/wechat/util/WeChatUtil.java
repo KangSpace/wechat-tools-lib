@@ -9,8 +9,8 @@ import java.io.IOException;
 
 /**
  * @author kango2gler@gmail.com
- * @desc 微信相关Util
- * @date 2017/2/13 18:43
+ *  微信相关Util
+ * @since 2017/2/13 18:43
  */
 public class WeChatUtil {
 
@@ -18,8 +18,8 @@ public class WeChatUtil {
      * 将json字符串转换为 WeChatReturnBean
      * @param jsonStr
      * @author kango2gler@gmail.com
-     * @date 2017/2/14 9:34
-     * @return
+     * @since 2017/2/14 9:34
+     * @return T
      */
     public static <T> T asReturnBean(String jsonStr, Class<T> cls) {
         if (StringUtils.isEmpty(jsonStr)) {
@@ -36,8 +36,8 @@ public class WeChatUtil {
 
     /**
      * 是否为微信浏览器请求
-     * @param request
-     * @return
+     * @param request request
+     * @return boolean
      */
     public static boolean isWeChatBroswer(HttpServletRequest request){
         String agent = request.getHeader("User-Agent");

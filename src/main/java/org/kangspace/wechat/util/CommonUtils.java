@@ -4,8 +4,8 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 
 /**
  * @author kango2gler@gmail.com
- * @desc 公共工具类
- * @date 2017/2/13 17:32
+ *  公共工具类
+ * @since 2017/2/13 17:32
  */
 public class CommonUtils {
     /**

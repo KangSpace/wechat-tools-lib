@@ -11,8 +11,8 @@ import java.util.logging.Logger;
 
 /**
  * @author kango2gler@gmail.com
- * @desc 微信配置常量类
- * @date 2017/2/10 17:31
+ *  微信配置常量类
+ * @since 2017/2/10 17:31
  */
 public class WeChatConfig {
     private static Logger logger = Logger.getLogger(WeChatConfig.class.getName());
@@ -25,8 +25,8 @@ public class WeChatConfig {
      * @param scope 授权作用域 {@link OAth2Scope}
      * @param state 重定向后会带上state参数，开发者可以填写a-zA-Z0-9的参数值，最多128字节
      * @author kango2gler@gmail.com
-     * @date 2017/2/13 16:36
-     * @return
+     * @since 2017/2/13 16:36
+     * @return String
      * @see WeChatConfig#getOauth2AuthorizeUrl(String, String, OAth2Scope, String)
      */
     public static String getOauth2AuthorizeUrl(String redirectUri, OAth2Scope scope, String state) throws UnsupportedEncodingException {
@@ -40,7 +40,7 @@ public class WeChatConfig {
      * @param redirectUri 回调路径
      * @param scope 授权作用域 {@link OAth2Scope}
      * @param state 重定向后会带上state参数，开发者可以填写a-zA-Z0-9的参数值，最多128字节
-     * @return
+     * @return String
      * @throws UnsupportedEncodingException
      * @see #getOauth2AuthorizeUrl(String, OAth2Scope, String)
      */
@@ -58,8 +58,8 @@ public class WeChatConfig {
      * 获取网页授权AccessToken URL
      * @param code 网页授权返回的code
      * @author kango2gler@gmail.com
-     * @date 2017/2/13 16:42
-     * @return
+     * @since 2017/2/13 16:42
+     * @return String
      */
     public static String getOauth2AccessTokenUrl(String code){
         return getOauth2AccessTokenUrl(getDefaultAppIdSecret().getAppId(),code);
@@ -69,7 +69,7 @@ public class WeChatConfig {
      * 获取网页授权AccessToken URL
      * @param appId 微信APP_ID
      * @param code 网页授权返回的code
-     * @return
+     * @return String
      * @see #getOauth2AccessTokenUrl(String)
      */
     public static String getOauth2AccessTokenUrl(String appId,String code){
@@ -81,8 +81,8 @@ public class WeChatConfig {
      * 获取公众号 AccessToken
      * @param
      * @author kango2gler@gmail.com
-     * @date 2017/2/13 16:47
-     * @return
+     * @since 2017/2/13 16:47
+     * @return String
      */
     public static String getMpAccesstokenUrl() {
         return _replaceAppIdAndAppSecret(MP_ACCESS_TOKEN_URL);
@@ -91,8 +91,8 @@ public class WeChatConfig {
      * 获取公众号 AccessToken
      * @param
      * @author kango2gler@gmail.com
-     * @date 2017/2/13 16:47
-     * @return
+     * @since 2017/2/13 16:47
+     * @return String
      */
     public static String getMpAccessTokenUrl(String appId) {
         String appSecret = getAppIdSecret(appId).getAppSecret();
@@ -104,8 +104,8 @@ public class WeChatConfig {
      * @param accessToken
      * @param openId 用户openId
      * @author kango2gler@gmail.com
-     * @date 2017/2/13 16:48
-     * @return
+     * @since 2017/2/13 16:48
+     * @return String
      */
     public static String getMpUserInfo(String accessToken , String openId) {
         return _replaceAccessToken(MP_USER_INFO_URL,accessToken).replace("OPENID",openId);
@@ -114,8 +114,8 @@ public class WeChatConfig {
      * 获取公众号 批量获取用户基本信息
      * @param accessToken
      * @author kango2gler@gmail.com
-     * @date 2020/11/09 12:04
-     * @return
+     * @since 2020/11/09 12:04
+     * @return String
      */
     public static String getMpUserInfoBatch(String accessToken) {
         return _replaceAccessToken(MP_USER_INFO_BATCH_URL,accessToken);
@@ -126,8 +126,8 @@ public class WeChatConfig {
      * @param accessToken
      * @param nextOpenId 第一个拉取的OPENID，不填默认从头开始拉取
      * @author kango2gler@gmail.com
-     * @date 2020/11/09 11:42
-     * @return
+     * @since 2020/11/09 11:42
+     * @return String
      */
     public static String getMpUserList(String accessToken,String nextOpenId) {
         return _replaceAccessToken(MP_USER_LIST_URL,accessToken).replace("NEXT_OPENID",nextOpenId!=null?nextOpenId:"");
@@ -137,8 +137,8 @@ public class WeChatConfig {
      * 获取发送模板消息接口 URL
      * @param accessToken
      * @author kango2gler@gmail.com
-     * @date 2017/2/13 16:50
-     * @return
+     * @since 2017/2/13 16:50
+     * @return String
      */
     public static String getMpMessageTemplateSendUrl(String accessToken) {
         return _replaceAccessToken(MP_MESSAGE_TEMPLATE_SEND_URL,accessToken);
@@ -148,8 +148,8 @@ public class WeChatConfig {
      * 获取公众号jssdk jsApiTcket接口 URL
      * @param accessToken
      * @author kango2gler@gmail.com
-     * @date 2017/2/13 16:53
-     * @return
+     * @since 2017/2/13 16:53
+     * @return String
      */
     public static String getMpJsSdkTicketUrl(String accessToken) {
         return _replaceAccessToken(MP_JS_SDK_TICKET_URL,accessToken);
@@ -160,8 +160,8 @@ public class WeChatConfig {
      * @param accessToken
      * @param openId
      * @author kango2gler@gmail.com
-     * @date 2017/6/6 16:25
-     * @return
+     * @since 2017/6/6 16:25
+     * @return String
      */
     public static String getOAth2UserInfoUrl(String accessToken, String openId,String lang) {
         return _replaceAccessToken(OAUTH2_USER_INFO_URL,accessToken).replace("OPENID",openId).replace("LANG",lang);
@@ -172,7 +172,7 @@ public class WeChatConfig {
     /**
      * 获取企业微信AccessToken
      * @param id corpid
-     * @return
+     * @return String
      */
     public static String getWeWorkAccessTokenUrl(String id) {
         String secret = getAppIdSecret(id).getAppSecret();
@@ -190,7 +190,7 @@ public class WeChatConfig {
     /**
      * 获取企业微信发送消息URL
      * @param accessToken
-     * @return
+     * @return String
      */
     public static String getWeWorkMessageSendUrl(String accessToken) {
         return _replaceAccessToken(WE_WORK_MESSAGE_SEND_URL, accessToken);
@@ -200,7 +200,7 @@ public class WeChatConfig {
      * 获取企业微信通过小程序JsCode临时登录凭证校验URL
      * @param accessToken
      * @param code
-     * @return
+     * @return String
      */
     public static String getWeWorkMiniProgramCode2SessionUrl(String accessToken,String code) {
         return _replaceCode(_replaceAccessToken(WE_WORK_MINI_PROGRAM_CODE_2_SESSION_URL, accessToken),code);
@@ -209,7 +209,7 @@ public class WeChatConfig {
     /**
      * 企业微信企业jssdk jsApiTcket获取接口URL
      * @param accessToken
-     * @return
+     * @return String
      */
     public static String getWeWorkJsSdkTicketUrl(String accessToken) {
         return _replaceAccessToken(WE_WORK_JS_SDK_TICKET_URL, accessToken);
@@ -218,7 +218,7 @@ public class WeChatConfig {
     /**
      * 企业微信应用jssdk jsApiTcket获取接口
      * @param accessToken
-     * @return
+     * @return String
      */
     public static String getWeWorkAppJsSdkTicketUrl(String accessToken) {
         return _replaceAccessToken(WE_WORK_APP_JS_SDK_TICKET_URL, accessToken);
@@ -231,8 +231,8 @@ public class WeChatConfig {
      * @param _str 需要替换的字符串
      * @param accessToken
      * @author kango2gler@gmail.com
-     * @date 2017/2/13 16:51
-     * @return
+     * @since 2017/2/13 16:51
+     * @return String
      */
     private static String _replaceAccessToken(String _str, String accessToken){
         return _str.replace("ACCESS_TOKEN",accessToken);
@@ -242,8 +242,8 @@ public class WeChatConfig {
      * 替换 code
      * @param code 需要替换的字符串
      * @author kango2gler@gmail.com
-     * @date 2021/10/10 20:35
-     * @return
+     * @since 2021/10/10 20:35
+     * @return String
      */
     private static String _replaceCode(String _str, String code){
         return _str.replace("CODE",code);
@@ -253,8 +253,8 @@ public class WeChatConfig {
      * 替换 appid 和 appsecret
      * @param _str
      * @author kango2gler@gmail.com
-     * @date 2017/2/13 16:34
-     * @return
+     * @since 2017/2/13 16:34
+     * @return String
      */
     private static String _replaceAppIdAndAppSecret(String _str){
         AppIdSecret defaultAppIdSeceret = getDefaultAppIdSecret();
@@ -267,8 +267,8 @@ public class WeChatConfig {
      * 替换 appid
      * @param _str
      * @author kango2gler@gmail.com
-     * @date 2017/2/13 16:34
-     * @return
+     * @since 2017/2/13 16:34
+     * @return String
      */
     private static String _replaceAppId(String _str){
         return _replaceAppId(_str,getDefaultAppIdSecret().getAppId());
@@ -280,8 +280,8 @@ public class WeChatConfig {
      * 替换 appsecret
      * @param _str
      * @author kango2gler@gmail.com
-     * @date 2017/2/13 16:34
-     * @return
+     * @since 2017/2/13 16:34
+     * @return String
      */
     private static String _replaceAppSecret(String _str){
         return _replaceAppSecret(_str,APP_SECRET);
@@ -529,8 +529,8 @@ public class WeChatConfig {
 
     /**
      * 通过key从{@link WeChatConfig#APP_ID_SECRETS_MAP}中获取AppIdSecret
-     * @param key
-     * @return
+     * @param key key
+     * @return String
      * @see #getDefaultAppIdSecret()
      * @see #_AppIdSecretsMapInit()
      * @see #getAppIdSecret(String)
@@ -543,8 +543,8 @@ public class WeChatConfig {
     }
     /**
      * 通过appId从{@link WeChatConfig#APP_ID_SECRETS_MAP}中获取AppIdSecret
-     * @param appId
-     * @return
+     * @param appId appId
+     * @return String
      * @see #getDefaultAppIdSecret()
      * @see #_AppIdSecretsMapInit()
      */
@@ -559,7 +559,7 @@ public class WeChatConfig {
     }
     /**
      * 获取默认的AppIdSecret
-     * @return
+     * @return String
      * @see #getAppIdSecret(String)
      * @see #_AppIdSecretsMapInit()
      */
@@ -573,8 +573,8 @@ public class WeChatConfig {
     public static class MessageTemplateIdHelper{
         /**
          * 通过key获取模版Id
-         * @param key
-         * @return
+         * @param key key
+         * @return String
          */
         public static String getTemplateIdByKey(String key) {
             return MP_MESSAGE_TEMPLATE_IDS_MAP.get(key);
@@ -582,7 +582,7 @@ public class WeChatConfig {
 
         /**
          * 获取所有已配置的模版id
-         * @return
+         * @return Collection
          */
         public static Collection<String> getTemplateIds(){
             return MP_MESSAGE_TEMPLATE_IDS_MAP.values();
@@ -599,13 +599,13 @@ public class WeChatConfig {
     /**
      * 网页授权 作用域
      * @author kango2gler@gmail.com
-     * @date 2017/2/13 16:37
+     * @since 2017/2/13 16:37
      */
     public enum OAth2Scope{
         /**
          * snsapi_base （不弹出授权页面，直接跳转，只能获取用户openid）
          * @author kango2gler@gmail.com
-         * @date 2017/2/13 16:38
+         * @since 2017/2/13 16:38
          */
         SNSAPI_BASE{
             @Override
@@ -616,7 +616,7 @@ public class WeChatConfig {
         /**
          * snsapi_userinfo （弹出授权页面，可通过openid拿到昵称、性别、所在地。并且，即使在未关注的情况下，只要用户授权，也能获取其信息）
          * @author kango2gler@gmail.com
-         * @date 2017/2/13 16:38
+         * @since 2017/2/13 16:38
          */
         SNSAPI_USERINFO{
             @Override

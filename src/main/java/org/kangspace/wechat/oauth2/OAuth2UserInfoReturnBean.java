@@ -5,8 +5,8 @@ import org.kangspace.wechat.bean.WeChatReturnBean;
 
 /**
  * @author kango2gler@gmail.com
- * @desc 网页授权获取用户信息
- * @date 2017/6/6 16:15
+ *  网页授权获取用户信息
+ * @since 2017/6/6 16:15
  */
 public class OAuth2UserInfoReturnBean extends WeChatReturnBean {
     /**

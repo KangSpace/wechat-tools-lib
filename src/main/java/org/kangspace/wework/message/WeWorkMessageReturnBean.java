@@ -6,7 +6,7 @@ import org.kangspace.wechat.bean.WeChatReturnBean;
 /**
  * @author kango2gler@gmail.com
  * @version 1.0
- * @date 2021/08/26 22:41
+ * @since 2021/08/26 22:41
  */
 public class WeWorkMessageReturnBean extends WeChatReturnBean {
     /**

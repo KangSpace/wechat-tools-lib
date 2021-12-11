@@ -11,7 +11,7 @@ import org.kangspace.wechat.message.batch.SendHelper;
  * </pre>
  *
  * @author kango2gler@gmail.com
- * @date 2020/11/12 17:54
+ * @since 2020/11/12 17:54
  */
 public interface MessageFactory {
 
@@ -46,16 +46,16 @@ public interface MessageFactory {
         }
         /**
          * 获取新的消息发送对象
-         * @param accessToken
-         * @param templateId
-         * @param openId
-         * @param firstVal
-         * @param remarkVal
-         * @param color
-         * @param key1Val
-         * @param key2Val
-         * @param key3Val
-         * @return
+         * @param accessToken accessToken
+         * @param templateId templateId
+         * @param openId openId
+         * @param firstVal firstVal
+         * @param remarkVal remarkVal
+         * @param color color
+         * @param key1Val key1Val
+         * @param key2Val key2Val
+         * @param key3Val key3Val
+         * @return SendHelper.SendObject
          */
         public static SendHelper.SendObject get(String appId,String accessToken, String templateId, String openId,String firstVal,String remarkVal,String color,String key1Val,String key2Val,String key3Val,
                                                 String url,MessageBean.Miniprogram miniprogram) {

@@ -13,7 +13,7 @@ import java.util.Objects;
  * </pre>
  *
  * @author kango2gler@gmail.com
- * @date 2021/11/24 23:19:47
+ * @since 2021/11/24 23:19:47
  */
 public class WeWorkAppJsApiTicketCache extends AbstractRedisWeChatCacheOperator<AbstractRedisWeChatCacheOperator.ExpireValue<String>, String> {
     private final static String JS_API_TICKET_CACHE_KEY_PREFIX = "wework_app_js_api_ticket";

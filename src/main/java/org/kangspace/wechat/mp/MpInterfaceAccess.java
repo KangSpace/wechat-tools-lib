@@ -23,8 +23,8 @@ import java.util.logging.Logger;
 
 /**
  * @author kango2gler@gmail.com
- * @desc 公众号接口访问
- * @date 2017/2/14 9:59
+ *  公众号接口访问
+ * @since 2017/2/14 9:59
  */
 public class MpInterfaceAccess extends WeChatCapableRetrieveToken {
     private static Logger logger = Logger.getLogger(MpInterfaceAccess.class.getName());
@@ -33,8 +33,8 @@ public class MpInterfaceAccess extends WeChatCapableRetrieveToken {
      * 获取公众号AccessToken
      * 该参数需缓存
      * @author kango2gler@gmail.com
-     * @date 2017/2/14 10:07
-     * @return
+     * @since 2017/2/14 10:07
+     * @return AccessTokenReturnBean
      * @see #getAccessToken(String)
      */
     public AccessTokenReturnBean getAccessToken(){
@@ -44,8 +44,8 @@ public class MpInterfaceAccess extends WeChatCapableRetrieveToken {
      * 获取公众号AccessToken
      * 该参数需缓存
      * @author kango2gler@gmail.com
-     * @date 2017/2/14 10:07
-     * @return
+     * @since 2017/2/14 10:07
+     * @return AccessTokenReturnBean
      * @see #getAccessToken()
      */
     public AccessTokenReturnBean getAccessToken(String appId){
@@ -59,9 +59,9 @@ public class MpInterfaceAccess extends WeChatCapableRetrieveToken {
 
     /**
      * 获取用户列表信息
-     * @param accessToken
-     * @param nextOpenId
-     * @return
+     * @param accessToken accessToken
+     * @param nextOpenId nextOpenId
+     * @return MpUserListReturnBean
      */
     public MpUserListReturnBean getUserList(String accessToken, String nextOpenId) {
         MyAbstractHttp client = MyHttpUtil.getClient(WeChatConfig.getMpUserList(accessToken,nextOpenId));
@@ -74,9 +74,9 @@ public class MpInterfaceAccess extends WeChatCapableRetrieveToken {
 
     /**
      * 获取用户基本信息
-     * @param accessToken
+     * @param accessToken accessToken
      * @param openId 当前用户openId
-     * @return
+     * @return MpUserBasicInfoReturnBean
      */
     public MpUserBasicInfoReturnBean getUserInfo(String accessToken,String openId) {
         MyAbstractHttp client = MyHttpUtil.getClient(WeChatConfig.getMpUserInfo(accessToken,openId));
@@ -112,10 +112,11 @@ public class MpInterfaceAccess extends WeChatCapableRetrieveToken {
 
     /**
      * 批量获取用户列表信息
-     * @param accessToken
-     * @param nextOpenId
+     * @param appId appId
+     * @param accessToken accessToken
+     * @param nextOpenId nextOpenId
      * @param consumer 用户基础信息消费者
-     * @return
+     * @param retrieveTokenFn retrieveTokenFn
      */
     public void getMpUserListBatch(String appId, String accessToken, String nextOpenId, Consumer<List<MpUserBasicInfoReturnBean>> consumer, Function<String,String> retrieveTokenFn) {
         getMpUserListBatch(appId,accessToken,nextOpenId,consumer,retrieveTokenFn,MpUserInfoBatchParamDTO.MAX_BATCH_SIZE);
@@ -199,7 +200,7 @@ public class MpInterfaceAccess extends WeChatCapableRetrieveToken {
      </pre>
      * @param
      * @author kango2gler@gmail.com
-     * @date 2017/1/8 23:31
+     * @since 2017/1/8 23:31
      * @return
      */
     public JSApiTicketReturnBean getJsApiTicket(String accessToken){
@@ -229,8 +230,8 @@ public class MpInterfaceAccess extends WeChatCapableRetrieveToken {
      </pre>
      * @param
      * @author kango2gler@gmail.com
-     * @date 2017/1/8 23:48
-     * @return
+     * @since 2017/1/8 23:48
+     * @return JSApiTicketSignBean
      */
     public static JSApiTicketSignBean getJsApiSign(JSApiTicketSignBean signBean) throws Exception {
         String url = signBean.getUrl();

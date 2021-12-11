@@ -22,8 +22,8 @@ import java.util.logging.Logger;
 
 /**
  * @author kango2gler@gmail.com
- * @desc Http帮助类
- * @date 2017/2/13 17:35
+ *  Http帮助类
+ * @since 2017/2/13 17:35
  */
 public class MyHttpClient implements MyAbstractHttp {
         private static Logger logger = Logger.getLogger(MyHttpClient.class.getName());
@@ -68,7 +68,7 @@ public class MyHttpClient implements MyAbstractHttp {
          * @param url	请求URL
          * @param params	请求参数
          * @param requestHeader	请求头
-         * @return
+         * @return String
          * </pre>
          */
         public String post(String url, Map<String, String> params, Map<String, String> requestHeader){
@@ -97,7 +97,7 @@ public class MyHttpClient implements MyAbstractHttp {
          * 开发人员：Kang
          * @param url	请求URL
          * @param params	请求参数
-         * @return
+         * @return String
          * </pre>
          */
         public String post(String url, Map<String, String> params){
@@ -129,7 +129,7 @@ public class MyHttpClient implements MyAbstractHttp {
          * 开发人员：Kang
          * @param url	请求URL
          * @param requestHeader	请求头
-         * @return
+         * @return String
          * </pre>
          */
         public String get(String url, Map<String, String> requestHeader){

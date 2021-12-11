@@ -12,7 +12,7 @@ import java.util.Objects;
  * </pre>
  *
  * @author kango2gler@gmail.com
- * @date 2020/11/4 11:08
+ * @since 2020/11/4 11:08
  */
 public class WeChatJsApiTicketCache extends AbstractRedisWeChatCacheOperator<AbstractRedisWeChatCacheOperator.ExpireValue<String>,String> {
     private final static String JS_API_TICKET_CACHE_KEY_PREFIX = "mp_js_api_ticket";

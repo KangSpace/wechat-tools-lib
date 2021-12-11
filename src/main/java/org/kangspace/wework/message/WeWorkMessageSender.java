@@ -11,8 +11,8 @@ import java.util.logging.Logger;
 
 /**
  * @author kango2gler@gmail.com
- * @desc 企业微信接口访问
- * @date 2021/08/26 22:38:47
+ *  企业微信接口访问
+ * @since 2021/08/26 22:38:47
  */
 public class WeWorkMessageSender {
     private static Logger logger = Logger.getLogger(WeWorkMessageSender.class.getName());
@@ -22,7 +22,7 @@ public class WeWorkMessageSender {
      * @param weWorkMessageBean 模版内容 templateId在该对象中
      * @param accessToken accessToken
      * @author kango2gler@gmail.com
-     * @date 2017/2/13 17:20
+     * @since 2017/2/13 17:20
      * @return
      */
     public WeWorkMessageReturnBean send(WeWorkMessageBean weWorkMessageBean, String accessToken){

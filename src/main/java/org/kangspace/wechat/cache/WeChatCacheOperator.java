@@ -6,7 +6,7 @@ package org.kangspace.wechat.cache;
  * </pre>
  *
  * @author kango2gler@gmail.com
- * @date 2020/11/4 11:06
+ * @since 2020/11/4 11:06
  */
 public interface WeChatCacheOperator<T,V>{
     /**
@@ -41,15 +41,16 @@ public interface WeChatCacheOperator<T,V>{
 
     /**
      * 删除缓存
-     * @param key
-     * @return
+     * @param key key
+     * @param appId appId
+     * @return T
      */
     T removeCache(String appId, String key);
 
     /**
      * 刷新缓存
-     * @param key
-     * @return
+     * @param key key
+     * @return T
      */
     T refreshCache(String appId, String key);
 }

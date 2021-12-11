@@ -11,7 +11,7 @@ import java.util.Date;
  * </pre>
  *
  * @author kango2gler@gmail.com
- * @date 2020/12/7 13:52
+ * @since 2020/12/7 13:52
  */
 public abstract class AbstractWeChatCacheOperator<T extends AbstractWeChatCacheOperator.ExpireValue<V>, V> implements WeChatCacheOperator<T, V> {
     private Logger log = LoggerFactory.getLogger(this.getClass());
@@ -40,7 +40,7 @@ public abstract class AbstractWeChatCacheOperator<T extends AbstractWeChatCacheO
      * @param appId     获取缓存的的appId
      * @param key       缓存key
      * @param isRefresh 是否刷新缓存
-     * @return
+     * @return T
      */
     public T get(String appId, String key, Boolean isRefresh) {
         T cache = getCache(appId, key);
@@ -97,7 +97,7 @@ public abstract class AbstractWeChatCacheOperator<T extends AbstractWeChatCacheO
     /**
      * 通过默认key刷新缓存
      *
-     * @return
+     * @return V
      */
     public V refresh(String appId, String key) {
         return refreshCache(appId, key).getValue();
@@ -109,7 +109,7 @@ public abstract class AbstractWeChatCacheOperator<T extends AbstractWeChatCacheO
      * 该锁应该为带超时时间的分布式锁
      * </pre>
      *
-     * @return
+     * @return V
      */
     public abstract RawLock getRawLock(String key);
 
@@ -132,8 +132,6 @@ public abstract class AbstractWeChatCacheOperator<T extends AbstractWeChatCacheO
 
     /**
      * 带超时时间的值
-     *
-     * @param <T>
      */
     public static class ExpireValue<T> {
         private T value;
@@ -198,7 +196,7 @@ public abstract class AbstractWeChatCacheOperator<T extends AbstractWeChatCacheO
         /**
          * 解锁
          *
-         * @return
+         * @return V
          */
         public abstract Boolean releaseLock();
 

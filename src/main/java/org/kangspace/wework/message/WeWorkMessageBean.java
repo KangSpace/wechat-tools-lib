@@ -12,7 +12,7 @@ import java.util.List;
  * </pre>
  * @author kango2gler@gmail.com
  * @version 1.0
- * @date 2021/08/25 23:29
+ * @since 2021/08/25 23:29
  */
 public class WeWorkMessageBean {
 

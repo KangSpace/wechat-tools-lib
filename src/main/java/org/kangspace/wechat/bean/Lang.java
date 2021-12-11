@@ -2,8 +2,8 @@ package org.kangspace.wechat.bean;
 
 /**
  * @author kango2gler@gmail.com
- * @desc 语言版本
- * @date 2017/6/6 16:15
+ *  语言版本
+ * @since 2017/6/6 16:15
  */
 public enum Lang {
     /**

@@ -17,15 +17,15 @@ import java.util.Date;
  * </pre>
  *
  * @author kango2gler@gmail.com
- * @date 2020/11/11 15:58
+ * @since 2020/11/11 15:58
  */
 public class JacksonParser {
     private static Logger logger = LoggerFactory.getLogger(JacksonParser.class);
     /**
      * 对象转json字符串
      *
-     * @param obj
-     * @return
+     * @param obj obj
+     * @return String
      */
     public static String toJsonString(Object obj) {
         try {
@@ -39,8 +39,9 @@ public class JacksonParser {
     /**
      * 对象转json字符串
      *
-     * @param value
-     * @return
+     * @param value value
+     * @param clazz clazz
+     * @return T
      */
     public static <T> T toObject(String value, Class<T> clazz) {
         try {

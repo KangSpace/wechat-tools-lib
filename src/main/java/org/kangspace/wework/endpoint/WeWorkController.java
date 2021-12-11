@@ -20,7 +20,7 @@ import java.io.UnsupportedEncodingException;
  * </pre>
  *
  * @author kango2gler@gmail.com
- * @date 2021/11/24 23:30:30
+ * @since 2021/11/24 23:30:30
  */
 public class WeWorkController {
     private org.slf4j.Logger log = LoggerFactory.getLogger(this.getClass());
@@ -71,7 +71,7 @@ public class WeWorkController {
      * @param appId
      * @param state
      * @author kango2gler@gmail.com
-     * @date 2021/11/24 23:30:30
+     * @since 2021/11/24 23:30:30
      * @return
      */
     public void auth(HttpServletRequest request,
@@ -103,7 +103,7 @@ public class WeWorkController {
      * @param code
      * @param state 第一个,前的字符串为appId
      * @author kango2gler@gmail.com
-     * @date 2020-11-30 17:43:13
+     * @since 2020-11-30 17:43:13
      * @return
      */
     public void authCallback(HttpServletRequest request,
@@ -142,7 +142,7 @@ public class WeWorkController {
      * @param appId
      * @param url
      * @author kango2gler@gmail.com
-     * @date 2016/11/15 17:17
+     * @since 2016/11/15 17:17
      * @return
      */
     public JSApiTicketSignBean getWXJSSDKSign(String appId,String url){
@@ -169,7 +169,7 @@ public class WeWorkController {
      * @param appId
      * @param url
      * @author kango2gler@gmail.com
-     * @date 2016/11/15 17:17
+     * @since 2016/11/15 17:17
      * @return
      */
     public JSApiTicketSignBean getWXAppJSSDKSign(String appId, String agentId, String url){

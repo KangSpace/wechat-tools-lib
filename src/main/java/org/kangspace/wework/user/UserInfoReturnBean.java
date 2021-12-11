@@ -7,7 +7,7 @@ import org.kangspace.wechat.bean.WeChatReturnBean;
  * 企业微信通过小程序JsCode临时登录凭证响应Bean
  * @author kango2gler@gmail.com
  * @since  1.0.1
- * @date 2021/10/10 20:38
+ * @since 2021/10/10 20:38
  */
 public class UserInfoReturnBean extends WeChatReturnBean {
 

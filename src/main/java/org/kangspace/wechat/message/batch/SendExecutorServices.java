@@ -10,14 +10,14 @@ import java.util.concurrent.ForkJoinPool;
 import java.util.logging.Logger;
 
 /**
- * @desc 线程池封装类
+ *  线程池封装类
  *       使用Executors.newFixedThreadPool(MAXTHREADNUM);固定大小线程池
  * 提供接口:
  *         获取线程池: SendExecutorServices.getPushExecutorServices()
  *         加入线程到线程池：executorService.execute()
  *         关闭线程池: executorService.shutdown()
  *         executorService 是否已实例化: executorService.isExecutorServiceNotNull()
- * @date 2016/12/21 13:25
+ * @since 2016/12/21 13:25
  * @author kango2gler@gmail.com
  *
  */
@@ -48,8 +48,8 @@ public class SendExecutorServices {
     /**
      * 获取 ExecutorService 对象
      * @author kango2gler@gmail.com
-     * @date 2016/12/21 18:33
-     * @return
+     * @since 2016/12/21 18:33
+     * @return ExecutorService
      */
     public static ExecutorService getSendExecutorServices(){
         return getSendExecutorServices(MAXTHREADNUM_DEFAULT);
@@ -58,8 +58,8 @@ public class SendExecutorServices {
      * 获取 ExecutorService 对象
      * @param nThreads the number of threads in the pool
      * @author kango2gler@gmail.com
-     * @date 2016/12/21 18:33
-     * @return
+     * @since 2016/12/21 18:33
+     * @return ExecutorService
      */
     public static ExecutorService getSendExecutorServices(int nThreads){
         if (executorService == null || executorService.isShutdown() || executorService.isTerminated()) {
@@ -79,7 +79,7 @@ public class SendExecutorServices {
      * @param isForce 是否立即关闭,是:则丢弃队列中的线程,发送interrupt()给正在执行的线程
      *                           否:则停止接收新线程入队,等待正在执行的线程完成
      * @author kango2gler@gmail.com
-     * @date 2016/12/21 18:17
+     * @since 2016/12/21 18:17
      *
      */
     public static void shutdown(Boolean isForce){
@@ -95,7 +95,7 @@ public class SendExecutorServices {
     /**
      * executorService 是否已实例化
      * @author kango2gler@gmail.com
-     * @date 2016/12/22 15:34
+     * @since 2016/12/22 15:34
      */
     public static void isExecutorServiceNotNull(){
         if (executorService == null) {

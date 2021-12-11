@@ -2,8 +2,8 @@ package org.kangspace.wechat.mp;
 
 /**
  * @author kango2gler@gmail.com
- * @desc JSApiTicketSignBean
- * @date 2017/2/14 10:04
+ *  JSApiTicketSignBean
+ * @since 2017/2/14 10:04
  */
 public class JSApiTicketSignBean {
     private String appId;

@@ -13,8 +13,8 @@ import java.util.List;
 
 /**
  * @author kango2gler@gmail.com
- * @desc 公众号接口访问测试
- * @date 2017/2/13 16:57
+ *  公众号接口访问测试
+ * @since 2017/2/13 16:57
  */
 @RunWith(JUnit4.class)
 public class MpInterfaceAccessTest {
@@ -29,7 +29,7 @@ public class MpInterfaceAccessTest {
     /**
      * 获取accessToken
      * @author kango2gler@gmail.com
-     * @date 2017/2/14 15:36
+     * @since 2017/2/14 15:36
      */
     @Test
     public void getMpAccessToken(){
@@ -39,7 +39,7 @@ public class MpInterfaceAccessTest {
     /**
      * 获取JSApiTicket
      * @author kango2gler@gmail.com
-     * @date 2017/2/14 15:35
+     * @since 2017/2/14 15:35
      */
     @Test
     public void getMpJSApiTicket(){
@@ -76,9 +76,9 @@ public class MpInterfaceAccessTest {
 
     /**
      * 获取access_token,可刷新
-     * @param appId
-     * @param refresh
-     * @return
+     * @param appId appId
+     * @param refresh refresh
+     * @return String
      */
     public String getAccessToken(String appId,boolean refresh){
         //首测时,取消注释,获取最新access_token

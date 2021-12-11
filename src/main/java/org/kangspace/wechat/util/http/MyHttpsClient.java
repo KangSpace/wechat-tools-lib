@@ -11,8 +11,8 @@ import java.util.logging.Logger;
 
 /**
  * @author kango2gler@gmail.com
- * @desc https帮助类
- * @date 2017/2/13 17:35
+ *  https帮助类
+ * @since 2017/2/13 17:35
  */
 public class MyHttpsClient implements MyAbstractHttp{
     private static Logger logger = Logger.getLogger(MyHttpsClient.class.getName());

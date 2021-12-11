@@ -10,7 +10,7 @@ import org.kangspace.wechat.bean.WeChatReturnBean;
  * </pre>
  *
  * @author kango2gler@gmail.com
- * @date 2020/11/13 17:39
+ * @since 2020/11/13 17:39
  */
 public class AccessTokenInvalidException extends RuntimeException{
     private WeChatReturnBean returnBean;

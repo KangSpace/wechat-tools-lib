@@ -10,8 +10,8 @@ import org.kangspace.wechat.mp.MpInterfaceAccessTest;
 
 /**
  * @author kango2gler@gmail.com
- * @desc 消息测试类
- * @date 2017/2/14 9:41
+ *  消息测试类
+ * @since 2017/2/14 9:41
  */
 @RunWith(JUnit4.class)
 public class MessageTest {
@@ -20,7 +20,7 @@ public class MessageTest {
      * 发送模版消息
      * 需先获取accessToken {@link MpInterfaceAccessTest}
      * @author kango2gler@gmail.com
-     * @date 2017/2/14 10:29
+     * @since 2017/2/14 10:29
      *
      */
     @Test

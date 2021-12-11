@@ -7,8 +7,8 @@ import java.util.logging.Logger;
 
 /**
  * @author kango2gler@gmail.com
- * @desc 微信配置文件帮助类
- * @date 2017/2/10 17:32
+ *  微信配置文件帮助类
+ * @since 2017/2/10 17:32
  */
 public class WeChatApiUrlConfigHelper {
 
@@ -31,8 +31,7 @@ public class WeChatApiUrlConfigHelper {
     /**
      * 初始化
      * @author kango2gler@gmail.com
-     * @date 2017/2/13 15:27
-     * @return
+     * @since 2017/2/13 15:27
      */
     private static void init() {
         if (helper == null) {
@@ -51,8 +50,8 @@ public class WeChatApiUrlConfigHelper {
      * 获取配置值,若配置不存在不抛出异常
      * @param key
      * @author kango2gler@gmail.com
-     * @date 2017/5/4 10:45
-     * @return
+     * @since 2017/5/4 10:45
+     * @return String
      */
     public static String getValue(String key) {
         try {

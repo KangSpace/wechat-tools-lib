@@ -2,8 +2,8 @@ package org.kangspace.wechat;
 
 /**
  * @author kango2gler@gmail.com
- * @desc 配置测试
- * @date 2017/2/13 16:57
+ *  配置测试
+ * @since 2017/2/13 16:57
  */
 public class ConfigTest {
     /*

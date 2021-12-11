@@ -19,17 +19,16 @@ import java.util.logging.Logger;
 
 /**
  * @author kango2gler@gmail.com
- * @desc 批量发送模版消息封装
- * @date 2016/12/21 18:39
+ *  批量发送模版消息封装
+ * @since 2016/12/21 18:39
  */
 public class SendHelper {
     static Logger logger = Logger.getLogger(SendHelper.class.getName());
 
     /**
-     * 发送消息
+     * 发送模版消息任务
+     * @param appId appId
      * @param obj 推送对象
-     * @param obj
-     * @description 发送模版消息任务
      * @author xuefeng.kang
      * @see #send(String, SendObject, org.kangspace.wechat.util.jdk18.Function)
      * @return 是否成功执行消息发送操作,不表示消息最终成功或失败
@@ -39,10 +38,9 @@ public class SendHelper {
     }
 
     /**
-     * 发送消息
+     * 发送模版消息任务
      * @param obj 推送对象
      * @param reGetToken 当token失效时刷新token的操作,输入appId
-     * @description 发送模版消息任务
      * @author xuefeng.kang
      * @return 是否成功执行消息发送操作,不表示消息最终成功或失败
      */
@@ -109,7 +107,7 @@ public class SendHelper {
      * 消息发送对象实体
      *
      * @author kango2gler@gmail.com
-     * @date 2017/2/21 17:01
+     * @since 2017/2/21 17:01
      */
     public static class SendObject {
         private String accessToken;

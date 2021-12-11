@@ -5,8 +5,8 @@ import java.util.UUID;
 
 /**
  * @author kango2gler@gmail.com
- * @desc MD5
- * @date 2017/2/14 15:30
+ *  MD5
+ * @since 2017/2/14 15:30
  */
 public class MD5 {
     public static final String md5(String s) {

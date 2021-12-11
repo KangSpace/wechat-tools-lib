@@ -8,9 +8,9 @@ public class Sha1Util {
     /**
      * 获取随机串
      *
-     * @return
+     * @return String
      * @author kango2gler@gmail.com
-     * @date 2017/2/14 15:29
+     * @since 2017/2/14 15:29
      */
     public static String getNonceStr() {
         Random random = new Random();

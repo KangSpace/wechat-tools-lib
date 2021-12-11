@@ -10,7 +10,7 @@ import java.util.List;
  * </pre>
  *
  * @author kango2gler@gmail.com
- * @date 2020/11/9 14:13
+ * @since 2020/11/9 14:13
  */
 public class MpUserInfoBatchParamDTO {
     /**

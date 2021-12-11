@@ -5,8 +5,8 @@ import org.kangspace.wechat.bean.WeChatReturnBean;
 
 /**
  * @author kango2gler@gmail.com
- * @desc JSApiTicketBean
- * @date 2017/2/14 10:04
+ *  JSApiTicketBean
+ * @since 2017/2/14 10:04
  */
 public class JSApiTicketReturnBean extends WeChatReturnBean {
     private String ticket;

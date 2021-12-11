@@ -24,8 +24,8 @@ import java.util.logging.Logger;
 
 /**
  * @author kango2gler@gmail.com
- * @desc 公众号接口访问
- * @date 2021/08/28 16:17:20
+ *  公众号接口访问
+ * @since 2021/08/28 16:17:20
  */
 public class WeWorkInterfaceAccess extends WeChatCapableRetrieveToken {
     private static Logger logger = Logger.getLogger(WeWorkInterfaceAccess.class.getName());
@@ -37,8 +37,8 @@ public class WeWorkInterfaceAccess extends WeChatCapableRetrieveToken {
      * @param request
      * @param response
      * @author kango2gler@gmail.com
-     * @date 2017/2/15 17:24
-     * @return
+     * @since 2017/2/15 17:24
+     * @throws UnsupportedEncodingException
      */
     public void redirectToAuthorizeUrl(String redirectURI, String param, HttpServletRequest request, HttpServletResponse response) throws UnsupportedEncodingException {
         redirectToAuthorizeUrl(WeChatConfig.getDefaultAppIdSecret().getAppId(),redirectURI,param, WeChatConfig.OAth2Scope.SNSAPI_BASE,request,response);
@@ -67,7 +67,7 @@ public class WeWorkInterfaceAccess extends WeChatCapableRetrieveToken {
      * @param response
      * @return
      * @author kango2gler@gmail.com
-     * @date 2017/2/15 17:24
+     * @since 2017/2/15 17:24
      */
     public void redirectToAuthorizeUrl(String appId,String redirectURI, String param, WeChatConfig.OAth2Scope scope, HttpServletRequest request, HttpServletResponse response) throws UnsupportedEncodingException {
         String url = WeChatConfig.getOauth2AuthorizeUrl(appId,redirectURI, scope, (param != null ? URLEncoder.encode(param, "UTF-8") : ""));
@@ -78,7 +78,7 @@ public class WeWorkInterfaceAccess extends WeChatCapableRetrieveToken {
      * 获取公众号AccessToken
      * 该参数需缓存
      * @author kango2gler@gmail.com
-     * @date 2021/08/28 16:17:20
+     * @since 2021/08/28 16:17:20
      * @return
      * @see #getAccessToken(String)
      */
@@ -89,7 +89,7 @@ public class WeWorkInterfaceAccess extends WeChatCapableRetrieveToken {
      * 获取公众号AccessToken
      * 该参数需缓存
      * @author kango2gler@gmail.com
-     * @date 2021/08/28 16:17:20
+     * @since 2021/08/28 16:17:20
      * @return
      * @see #getAccessToken()
      */
@@ -218,10 +218,11 @@ public class WeWorkInterfaceAccess extends WeChatCapableRetrieveToken {
      String jsApiTicket,String url,String noncestr,Long timestamp
      其中的Url需encodeURIComponent
      </pre>
-     * @param
+     * @param signBean  signBean
      * @author kango2gler@gmail.com
-     * @date 2017/1/8 23:48
-     * @return
+     * @since 2017/1/8 23:48
+     * @return JSApiTicketSignBean
+     * @throws Exception
      */
     public static JSApiTicketSignBean getJsApiSign(JSApiTicketSignBean signBean) throws Exception {
         String url = signBean.getUrl();

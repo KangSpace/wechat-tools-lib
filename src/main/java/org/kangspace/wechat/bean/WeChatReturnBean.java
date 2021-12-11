@@ -2,8 +2,8 @@ package org.kangspace.wechat.bean;
 
 /**
  * @author kango2gler@gmail.com
- * @desc 微信接口返回消息bean
- * @date 2017/2/13 17:21
+ *  微信接口返回消息bean
+ * @since 2017/2/13 17:21
  */
 public class WeChatReturnBean {
     /**
@@ -60,8 +60,8 @@ public class WeChatReturnBean {
 
     /**
      * access_token是否过期
-     * @param returnBean
-     * @return
+     * @param returnBean returnBean
+     * @return boolean
      */
     public static boolean isAccessTokenInvalid(WeChatReturnBean returnBean){
         return returnBean != null && (returnBean.getErrcode() == 40001 || returnBean.getErrcode() == 40014 || returnBean.getErrcode() == 42001);

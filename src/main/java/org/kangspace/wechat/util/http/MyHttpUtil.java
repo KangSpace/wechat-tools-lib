@@ -2,8 +2,8 @@ package org.kangspace.wechat.util.http;
 
 /**
  * @author kango2gler@gmail.com
- * @desc http帮助类
- * @date 2017/2/13 17:41
+ *  http帮助类
+ * @since 2017/2/13 17:41
  */
 public class MyHttpUtil {
     public static String HTTP_PROTOCOL = "https";
@@ -12,8 +12,8 @@ public class MyHttpUtil {
      * 自动识别http或https
      * @param
      * @author kango2gler@gmail.com
-     * @date 2017/2/13 17:42
-     * @return
+     * @since 2017/2/13 17:42
+     * @return MyAbstractHttp
      */
     public static MyAbstractHttp getClient(String url){
         if (url.startsWith(HTTP_PROTOCOL) || url.startsWith(HTTP_PROTOCOL.toUpperCase())) {

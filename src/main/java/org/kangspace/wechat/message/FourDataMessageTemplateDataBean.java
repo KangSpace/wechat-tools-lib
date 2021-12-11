@@ -2,8 +2,8 @@ package org.kangspace.wechat.message;
 
 /**
  * @author kango2gler@gmail.com
- * @desc 4条数据显示类模版
- * @date 2017/2/13 17:14
+ *  4条数据显示类模版
+ * @since 2017/2/13 17:14
  */
 public class FourDataMessageTemplateDataBean extends NotificationMessageTemplateDataBean {
     private MessageTemplateDataValueColorBean keyword4;

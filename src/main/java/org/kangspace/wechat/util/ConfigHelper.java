@@ -6,8 +6,8 @@ import java.util.logging.Logger;
 
 /**
  * @author kango2gler@gmail.com
- * @desc mongo.properties配置文件帮助类
- * @date 2017/2/10 17:32
+ *  mongo.properties配置文件帮助类
+ * @since 2017/2/10 17:32
  */
 public class ConfigHelper {
     private static Logger logger = Logger.getLogger(ConfigHelper.class.getName());
@@ -31,8 +31,8 @@ public class ConfigHelper {
     /**
      * 获取配置信息
      * @author kango2gler@gmail.com
-     * @date 2017/5/4 11:17
-     * @return
+     * @since 2017/5/4 11:17
+     * @return ResourceBundle
      */
     public ResourceBundle getBundle() {
         return bundle;
@@ -41,8 +41,7 @@ public class ConfigHelper {
     /**
      * 初始化
      * @author kango2gler@gmail.com
-     * @date 2017/2/13 15:27
-     * @return
+     * @since 2017/2/13 15:27
      */
     private void init() {
         try{
@@ -57,9 +56,9 @@ public class ConfigHelper {
      * 通过key获取配置文件信息
      * 支持文件热加载
      * </pre>
-     * @param key
+     * @param key key
      * @author kango2gler@gmail.com
-     * @date 2017/2/10 17:34
+     * @since 2017/2/10 17:34
      * @return value
      */
     public String getValue(String key){
@@ -77,9 +76,10 @@ public class ConfigHelper {
 
     /**
      * 通过key获取配置文件信息,若key不存在则不抛出异常
+     * @param key key
      * @author kango2gler@gmail.com
-     * @date 2017/5/4 11:08
-     * @return
+     * @since 2017/5/4 11:08
+     * @return String
      */
     public String getValueNoException(String key){
         try {

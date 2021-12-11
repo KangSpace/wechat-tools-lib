@@ -21,16 +21,18 @@ import java.util.concurrent.TimeUnit;
  * </pre>
  *
  * @author kango2gler@gmail.com
- * @date 2020/10/16 13:50
+ * @since 2020/10/16 13:50
  */
 public class RedisTemplateOperationsUtil {
 
     /**
      * 当key不存在时设置值
-     * @param value
-     * @param timeout
-     * @param unit
-     * @return
+     * @param redisTemplate redisTemplate
+     * @param key key
+     * @param value  value
+     * @param timeout timeout
+     * @param unit unit
+     * @return Boolean
      */
     public static <K,V> Boolean setIfAbsent(RedisTemplate<K, ?> redisTemplate, K key, V value, long timeout, TimeUnit unit) {
         final byte[] rawKey = getRawKey(redisTemplate,key);

@@ -14,7 +14,7 @@ import java.util.List;
  * </pre>
  *
  * @author kango2gler@gmail.com
- * @date 2020/11/9 11:49
+ * @since 2020/11/9 11:49
  */
 public class MpUserBasicInfoReturnBean extends WeChatReturnBean {
 

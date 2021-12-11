@@ -20,7 +20,7 @@ import java.io.UnsupportedEncodingException;
  * </pre>
  *
  * @author kango2gler@gmail.com
- * @date 2020/11/30 16:34
+ * @since 2020/11/30 16:34
  */
 public class WeChatController {
     private org.slf4j.Logger log = LoggerFactory.getLogger(this.getClass());
@@ -56,11 +56,13 @@ public class WeChatController {
      * 微信网页授权访问入口
      * auth/{appId}
      * </pre>
-     * @param appId
-     * @param state
+     * @param request request
+     * @param response response
+     * @param appId appId
+     * @param state state
+     * @param callbackUrl callbackUrl
      * @author kango2gler@gmail.com
-     * @date 2020-11-30 17:43:13
-     * @return
+     * @since 2020-11-30 17:43:13
      */
     public void auth(HttpServletRequest request,
                      HttpServletResponse response,
@@ -91,8 +93,7 @@ public class WeChatController {
      * @param code
      * @param state 第一个,前的字符串为appId
      * @author kango2gler@gmail.com
-     * @date 2020-11-30 17:43:13
-     * @return
+     * @since 2020-11-30 17:43:13
      */
     public void authCallback(HttpServletRequest request,
                              HttpServletResponse response,
@@ -127,10 +128,10 @@ public class WeChatController {
      * 获取微信jssdk签名信息
      * jssign/{appId}
      * </pre>
-     * @param appId
-     * @param url
+     * @param appId appId
+     * @param url url
      * @author kango2gler@gmail.com
-     * @date 2016/11/15 17:17
+     * @since 2016/11/15 17:17
      * @return
      */
     public JSApiTicketSignBean getWXJSSDKSign(String appId,String url){

@@ -7,8 +7,8 @@ import java.util.logging.Logger;
 
 /**
  * @author kango2gler@gmail.com
- * @desc wx-error-code.properties配置文件帮助类
- * @date 2017/2/10 17:32
+ *  wx-error-code.properties配置文件帮助类
+ * @since 2017/2/10 17:32
  */
 public class WeChatErrorConfigHelper {
     static Logger logger = Logger.getLogger(WeChatErrorConfigHelper.class.getName());
@@ -30,8 +30,7 @@ public class WeChatErrorConfigHelper {
     /**
      * 初始化
      * @author kango2gler@gmail.com
-     * @date 2017/2/13 15:27
-     * @return
+     * @since 2017/2/13 15:27
      */
     private static void init() {
         if (helper == null) {
@@ -48,10 +47,10 @@ public class WeChatErrorConfigHelper {
     }
     /**
      * 获取配置值,若配置不存在不抛出异常
-     * @param key
+     * @param key key
      * @author kango2gler@gmail.com
-     * @date 2017/5/4 10:45
-     * @return
+     * @since 2017/5/4 10:45
+     * @return String
      */
     public static String getValueWithoutException(String key) {
         try {

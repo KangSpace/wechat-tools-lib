@@ -16,7 +16,7 @@ import javax.servlet.http.HttpServletResponse;
  * </pre>
  *
  * @author kango2gler@gmail.com
- * @date 2020/12/7 10:58
+ * @since 2020/12/7 10:58
  */
 @RunWith(JUnit4.class)
 public class WeChatControllerTest {

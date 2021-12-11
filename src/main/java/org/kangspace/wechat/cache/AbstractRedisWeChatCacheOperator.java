@@ -18,7 +18,7 @@ import java.util.concurrent.TimeUnit;
  * </pre>
  *
  * @author kango2gler@gmail.com
- * @date 2020/11/4 11:06
+ * @since 2020/11/4 11:06
  */
 public abstract class AbstractRedisWeChatCacheOperator<T extends AbstractWeChatCacheOperator.ExpireValue<V>, V> extends AbstractWeChatCacheOperator<T, V> {
     /**
@@ -54,8 +54,8 @@ public abstract class AbstractRedisWeChatCacheOperator<T extends AbstractWeChatC
     /**
      * 通过完整key获取同步锁Key
      *
-     * @param fullKey
-     * @return
+     * @param fullKey fullKey
+     * @return string
      */
     private String getLockKey(String fullKey) {
         return fullKey + "_lock";
@@ -65,7 +65,7 @@ public abstract class AbstractRedisWeChatCacheOperator<T extends AbstractWeChatC
      * 根据Key获取缓存信息
      *
      * @param key 不含cacheKeyPrefix的key
-     * @return
+     * @return T
      */
     @Override
     public T getCache(String appId, String key) {
@@ -78,7 +78,7 @@ public abstract class AbstractRedisWeChatCacheOperator<T extends AbstractWeChatC
     /**
      * 获取App的缓存
      *
-     * @param appId
+     * @param appId appId
      * @return {@link V}
      */
     public V getValByAppId(String appId) {
@@ -88,7 +88,7 @@ public abstract class AbstractRedisWeChatCacheOperator<T extends AbstractWeChatC
     /**
      * 获取缓存信息,缓存不存在时,获取新内容
      *
-     * @return
+     * @return V
      */
     @Override
     public V get(String appId, String key) {
@@ -100,7 +100,7 @@ public abstract class AbstractRedisWeChatCacheOperator<T extends AbstractWeChatC
      *
      * @param key       含cachePrefixKey
      * @param isRefresh 是否刷新缓存
-     * @return T <T>
+     * @return T
      */
     @Override
     public T get(String appId, String key, Boolean isRefresh) {
@@ -148,8 +148,8 @@ public abstract class AbstractRedisWeChatCacheOperator<T extends AbstractWeChatC
      * 获取缓存的完整key
      * 格式: {cacheKeyPrefix}:{key}
      *
-     * @param key
-     * @return
+     * @param key key
+     * @return string
      */
     public String getFullKey(String key) {
         Objects.requireNonNull(key, "key must be not null");
@@ -173,8 +173,8 @@ public abstract class AbstractRedisWeChatCacheOperator<T extends AbstractWeChatC
     /**
      * 更具appId获取原始信息
      *
-     * @param appId
-     * @return
+     * @param appId appId
+     * @return T
      */
     @Override
     public abstract T getRaw(String appId);
@@ -187,7 +187,7 @@ public abstract class AbstractRedisWeChatCacheOperator<T extends AbstractWeChatC
     /**
      * 通过默认key刷新缓存
      *
-     * @return
+     * @return V
      */
     public V refreshByAppId(String appId) {
         return refreshCache(appId, getFullKey(TOKENS_CACHE_KEY_TAG, appId)).getValue();

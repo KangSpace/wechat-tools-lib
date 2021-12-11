@@ -4,8 +4,8 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 /**
  * @author kango2gler@gmail.com
- * @desc 消息实体
- * @date 2017/2/13 16:58
+ *  消息实体
+ * @since 2017/2/13 16:58
  */
 public class MessageBean {
     /**

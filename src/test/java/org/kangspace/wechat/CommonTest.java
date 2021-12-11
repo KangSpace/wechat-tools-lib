@@ -6,8 +6,8 @@ import org.kangspace.wechat.util.encryption.AES;
 
 /**
  * @author kango2gler@gmail.com
- * @desc 通用测试类
- * @date 2017/2/13 16:57
+ *  通用测试类
+ * @since 2017/2/13 16:57
  */
 @RunWith(JUnit4.class)
 public class CommonTest {

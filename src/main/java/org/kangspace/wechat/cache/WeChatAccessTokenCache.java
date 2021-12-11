@@ -12,7 +12,7 @@ import java.util.Objects;
  * </pre>
  *
  * @author kango2gler@gmail.com
- * @date 2020/11/4 11:08
+ * @since 2020/11/4 11:08
  */
 public class WeChatAccessTokenCache extends AbstractRedisWeChatCacheOperator<AbstractRedisWeChatCacheOperator.ExpireValue<String>,String> {
     /**

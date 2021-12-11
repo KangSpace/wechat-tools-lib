@@ -4,8 +4,8 @@ import java.util.ResourceBundle;
 
 /**
  * @author kango2gler@gmail.com
- * @desc 微信配置文件帮助类
- * @date 2017/2/10 17:32
+ *  微信配置文件帮助类
+ * @since 2017/2/10 17:32
  */
 public class WeChatConfigHelper {
 
@@ -20,8 +20,7 @@ public class WeChatConfigHelper {
     /**
      * 初始化
      * @author kango2gler@gmail.com
-     * @date 2017/2/13 15:27
-     * @return
+     * @since 2017/2/13 15:27
      */
     private static void init() {
         if (bundle == null) {
@@ -60,9 +59,9 @@ public class WeChatConfigHelper {
 
     /**
      * 通过key获取微信配置文件信息
-     * @param key
+     * @param key key
      * @author kango2gler@gmail.com
-     * @date 2017/2/10 17:34
+     * @since 2017/2/10 17:34
      * @return value
      */
     public static String value(String key){

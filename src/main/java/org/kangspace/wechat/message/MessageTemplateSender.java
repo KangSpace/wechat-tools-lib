@@ -13,8 +13,8 @@ import java.util.logging.Logger;
 
 /**
  * @author kango2gler@gmail.com
- * @desc 模版消息发送类
- * @date 2017/2/13 17:20
+ *  模版消息发送类
+ * @since 2017/2/13 17:20
  */
 public class MessageTemplateSender {
     private static Logger logger = Logger.getLogger(WeChatConfig.class.getName());
@@ -24,8 +24,8 @@ public class MessageTemplateSender {
      * @param messageBean 模版内容 templateId在该对象中
      * @param accessToken accessToken
      * @author kango2gler@gmail.com
-     * @date 2017/2/13 17:20
-     * @return
+     * @since 2017/2/13 17:20
+     * @return WeChatReturnBean
      */
     public WeChatReturnBean send(MessageBean messageBean, String accessToken){
         MyAbstractHttp client = MyHttpUtil.getClient(WeChatConfig.getMpMessageTemplateSendUrl(accessToken));

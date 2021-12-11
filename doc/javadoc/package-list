@@ -3,6 +3,7 @@ org.kangspace.wechat.bean
 org.kangspace.wechat.cache
 org.kangspace.wechat.config
 org.kangspace.wechat.endpoint
+org.kangspace.wechat.jssdk
 org.kangspace.wechat.message
 org.kangspace.wechat.message.batch
 org.kangspace.wechat.message.factory
@@ -12,3 +13,10 @@ org.kangspace.wechat.util
 org.kangspace.wechat.util.encryption
 org.kangspace.wechat.util.http
 org.kangspace.wechat.util.jdk18
+org.kangspace.wework
+org.kangspace.wework.cache
+org.kangspace.wework.endpoint
+org.kangspace.wework.jssdk
+org.kangspace.wework.message
+org.kangspace.wework.mini
+org.kangspace.wework.user

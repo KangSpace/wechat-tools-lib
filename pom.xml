@@ -2,6 +2,12 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <groupId>org.sonatype.oss</groupId>
+        <artifactId>oss-parent</artifactId>
+        <version>7</version>
+    </parent>
+
     <modelVersion>4.0.0</modelVersion>
     <groupId>org.kangspace.wechat</groupId>
     <artifactId>wechat-tools-lib</artifactId>
@@ -9,7 +15,8 @@
     <version>1.0.1</version>
     <name>wechat-tools-lib</name>
     <url>https://github.com/KangSpace/wechat-tools-lib</url>
-    <description>💬微信公众号接口集成；微信网页开发；微信网页授权；微信公众号模版消息；💬This is a tools lib for WeChat, use for mp.weixin.qq.com.</description>
+    <description>💬微信公众号接口集成；微信网页开发；微信网页授权；微信公众号模版消息；💬This is a tools lib for WeChat, use for mp.weixin.qq.com.
+    </description>
 
     <licenses>
         <license>
@@ -26,6 +33,7 @@
     </developers>
 
     <scm>
+        <tag>master</tag>
         <connection>scm:git:https://github.com/KangSpace/wechat-tools-lib.git</connection>
         <developerConnection>scm:git:https://github.com/KangSpace/wechat-tools-lib.git</developerConnection>
         <url>https://github.com/KangSpace/wechat-tools-lib</url>
@@ -66,6 +74,7 @@
                                 </goals>
                                 <configuration>
                                     <encoding>UTF-8</encoding>
+                                    <skip>true</skip>
                                 </configuration>
                             </execution>
                         </executions>

@@ -1,4 +1,8 @@
 # wechat-tools-lib
+
+本项目不再维护更新，可使用 [wechat-helper](https://github.com/KangSpaceTeam/wechat-helper) 替代。
+
+<!--
 [![license](https://img.shields.io/github/license/KangSpace/wechat-tools-lib)](LICENSE)
 ![maven](https://img.shields.io/maven-central/v/org.kangspace.wechat/wechat-tools-lib)
 
@@ -193,3 +197,5 @@
     <version>1.0.2</version>
 </dependency>
 ```
+
+-->
